@@ -3,26 +3,149 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bioengineering Trivia</title>
+    <meta name="theme-color" content="#0a1020">
+    <title>Intro to Bioengineering Pursuit</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <main class="app">
-      <header>
-        <p class="eyebrow">UC3M classroom game</p>
-        <h1>Bioengineering Trivia</h1>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">UC3M classroom challenge</p>
+          <h1>Intro to Bioengineering Pursuit</h1>
+        </div>
+        <div class="topbar-actions">
+          <button class="button button-secondary" id="import-button" type="button">Import questions</button>
+          <input id="question-file" type="file" accept="application/json,.json" hidden>
+          <button class="button button-secondary" id="fullscreen-button" type="button">Full screen</button>
+        </div>
       </header>
 
-      <section class="placeholder" aria-label="Board placeholder">
-        <p>The interactive board will live here.</p>
-      </section>
+      <section class="game-layout">
+        <div class="board-panel">
+          <div class="board" id="board" aria-label="Bioengineering trivia board">
+            <svg class="board-lines" id="board-lines" viewBox="0 0 1000 1000" aria-hidden="true"></svg>
+            <div class="board-nodes" id="board-nodes"></div>
+            <div class="board-center-label" aria-hidden="true">
+              <span>BIO</span>
+              <small>ENGINEERING</small>
+            </div>
+          </div>
+          <div class="board-legend" id="board-legend"></div>
+        </div>
 
-      <aside class="controls" aria-label="Game controls">
-        <p><strong>Group 1</strong> starts the game.</p>
-        <button id="roll-die" type="button">Roll die</button>
-        <output id="die-result" aria-live="polite">-</output>
-      </aside>
+        <aside class="sidebar">
+          <section class="turn-card">
+            <div class="session-controls">
+              <label for="game-mode">Rules</label>
+              <select id="game-mode">
+                <option value="classroom">Classroom: 60-minute session</option>
+                <option value="classic">Classic: headquarters wedges</option>
+              </select>
+              <div class="session-clock-row">
+                <output id="session-clock" aria-label="Time remaining">60:00</output>
+                <button class="button button-secondary" id="clock-toggle" type="button">Start clock</button>
+                <button class="button button-secondary" id="finish-class" type="button">End class & rank</button>
+              </div>
+              <p id="session-hint">Any color can earn a wedge. One question per team turn.</p>
+            </div>
+            <p class="section-label">Current turn</p>
+            <div class="turn-heading">
+              <span class="active-team-dot" id="active-team-dot"></span>
+              <strong id="active-team-name">Alpha</strong>
+            </div>
+            <p class="status-text" id="status-text">Roll the die to begin.</p>
+            <div class="die-row">
+              <output class="die" id="die-result" aria-live="polite">–</output>
+              <button class="button button-primary" id="roll-die" type="button">Roll die</button>
+            </div>
+            <div class="control-grid">
+              <button class="button button-secondary" id="manual-move" type="button">Move anywhere</button>
+              <button class="button button-secondary" id="next-turn" type="button">Next group</button>
+              <button class="button button-secondary" id="undo-button" type="button">Undo</button>
+              <button class="button button-danger" id="reset-button" type="button">Reset</button>
+            </div>
+          </section>
+
+          <section class="teams-card">
+            <div class="section-heading">
+              <p class="section-label">Teams</p>
+              <span class="subtle">Click wedges to adjust</span>
+            </div>
+            <div id="teams-list" class="teams-list"></div>
+          </section>
+        </aside>
+      </section>
     </main>
+
+    <dialog class="question-dialog" id="question-dialog">
+      <div class="question-card">
+        <header class="question-header">
+          <div>
+            <p class="question-team" id="question-team">Alpha</p>
+            <h2 id="question-category">Category</h2>
+          </div>
+          <span class="category-badge" id="question-badge"></span>
+        </header>
+        <div class="question-body">
+          <div class="category-choice" id="category-choice" hidden>
+            <p class="section-label" id="category-choice-label">Choose a category</p>
+            <div class="category-choice-buttons" id="category-choice-buttons"></div>
+          </div>
+          <p class="question-text" id="question-text"></p>
+          <div class="answer-choices" id="answer-choices"></div>
+          <div class="answer-panel" id="answer-panel" hidden>
+            <p class="section-label">Explanation</p>
+            <p id="answer-text"></p>
+          </div>
+        </div>
+        <footer class="question-actions">
+          <button class="button button-secondary" id="skip-question" type="button" hidden>Skip turn</button>
+          <button class="button button-secondary" id="change-question" type="button">Another question</button>
+          <button class="button button-secondary" id="reveal-answer" type="button">Reveal correct answer</button>
+          <button class="button button-danger" id="incorrect-answer" type="button">Incorrect</button>
+          <button class="button button-success" id="correct-answer" type="button">Correct</button>
+        </footer>
+      </div>
+    </dialog>
+
+    <dialog class="confirm-dialog" id="reset-dialog">
+      <form method="dialog">
+        <h2>Reset the game?</h2>
+        <p>All positions, wedges, and turn progress will be cleared.</p>
+        <div class="confirm-actions">
+          <button class="button button-secondary" value="cancel">Cancel</button>
+          <button class="button button-danger" id="confirm-reset" value="confirm">Reset game</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog class="winner-dialog" id="winner-dialog">
+      <div class="winner-screen">
+        <p class="winner-kicker">Bioengineering Pursuit champions</p>
+        <div class="winner-star" id="winner-star"></div>
+        <h2 id="winner-name">Alpha wins!</h2>
+        <p class="winner-summary" id="winner-summary"></p>
+        <div class="standings" id="standings"></div>
+        <div class="winner-actions">
+          <button class="button button-secondary" id="review-board" type="button">Review board</button>
+          <button class="button button-primary" id="winner-new-game" type="button">Start new game</button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="confirm-dialog" id="finish-dialog">
+      <form method="dialog">
+        <h2>End the class game?</h2>
+        <p>The class winner is ranked by wedges, then correct answers. Exact ties share a place.</p>
+        <div class="confirm-actions">
+          <button class="button button-secondary" value="cancel">Keep playing</button>
+          <button class="button button-success" id="confirm-finish" value="confirm">Show results</button>
+        </div>
+      </form>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="questions-data.js"></script>
     <script src="game.js"></script>
   </body>
 </html>
