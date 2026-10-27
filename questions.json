@@ -5,12 +5,12 @@
     "difficulty": "introductory",
     "question": "Which visible light has the longer wavelength?",
     "options": [
+      "All colors have equal wavelengths",
       "Red",
-      "Blue",
       "Violet",
-      "All colors have equal wavelengths"
+      "Blue"
     ],
-    "correctOption": 0,
+    "correctOption": 1,
     "explanation": "Red wavelengths are longer than blue and violet wavelengths."
   },
   {
@@ -19,9 +19,9 @@
     "difficulty": "introductory",
     "question": "Which unit is commonly used for visible-light wavelength?",
     "options": [
-      "Ampere",
+      "Micrometer",
       "Nanometer",
-      "Kilogram",
+      "Ampere",
       "Second"
     ],
     "correctOption": 1,
@@ -33,12 +33,12 @@
     "difficulty": "introductory",
     "question": "What counts the number of wave cycles each second?",
     "options": [
-      "Mass",
       "Focal length",
       "Frequency",
+      "Mass",
       "Wavelength"
     ],
-    "correctOption": 2,
+    "correctOption": 1,
     "explanation": "Frequency is measured in hertz, or cycles per second."
   },
   {
@@ -47,12 +47,12 @@
     "difficulty": "introductory",
     "question": "What is a photon?",
     "options": [
-      "A small piece of glass",
       "An electrically charged cell",
-      "A sound pulse",
-      "A quantum of electromagnetic radiation"
+      "A continuous electromagnetic wave with no discrete energy exchanges",
+      "A quantum of electromagnetic radiation",
+      "A small piece of glass"
     ],
-    "correctOption": 3,
+    "correctOption": 2,
     "explanation": "Light exchanges energy in discrete quanta called photons."
   },
   {
@@ -61,12 +61,12 @@
     "difficulty": "introductory",
     "question": "How does a flat mirror reflect a light ray?",
     "options": [
-      "Reflection and incidence angles are equal",
+      "Every ray leaves in a random direction",
       "Every ray leaves perpendicular to the mirror",
-      "Every ray follows the surface",
-      "Every ray leaves in a random direction"
+      "The reflected angle is twice the incidence angle",
+      "Reflection and incidence angles are equal"
     ],
-    "correctOption": 0,
+    "correctOption": 3,
     "explanation": "Both angles are measured relative to the surface normal."
   },
   {
@@ -77,7 +77,7 @@
     "options": [
       "Electrical conduction",
       "Refraction",
-      "Radioactive decay",
+      "Reflection at the air–water interface",
       "Fluorescence"
     ],
     "correctOption": 1,
@@ -89,12 +89,12 @@
     "difficulty": "introductory",
     "question": "Which can travel through a vacuum?",
     "options": [
-      "Water waves",
-      "A pressure wave in air",
+      "Ordinary sound",
       "Light",
-      "Ordinary sound"
+      "Sound waves in a vacuum",
+      "A pressure wave in air"
     ],
-    "correctOption": 2,
+    "correctOption": 1,
     "explanation": "Electromagnetic waves do not require a material medium; sound does."
   },
   {
@@ -105,10 +105,10 @@
     "options": [
       "Only the longest visible wavelength",
       "Only infrared radiation",
-      "Light containing no energy",
-      "A mixture of visible wavelengths"
+      "A mixture of visible wavelengths",
+      "A single wavelength near the middle of the visible spectrum"
     ],
-    "correctOption": 3,
+    "correctOption": 2,
     "explanation": "A suitable mixture of visible wavelengths is perceived as white."
   },
   {
@@ -117,12 +117,12 @@
     "difficulty": "introductory",
     "question": "Which radiation has wavelengths longer than visible red?",
     "options": [
+      "X-rays",
       "Infrared",
       "Ultraviolet",
-      "X-rays",
       "Visible violet"
     ],
-    "correctOption": 0,
+    "correctOption": 1,
     "explanation": "Infrared lies beyond the red end of the visible spectrum."
   },
   {
@@ -131,12 +131,12 @@
     "difficulty": "introductory",
     "question": "Which unit measures energy?",
     "options": [
-      "Liter",
       "Joule",
-      "Hertz",
-      "Meter"
+      "Liter",
+      "Meter",
+      "Watt"
     ],
-    "correctOption": 1,
+    "correctOption": 0,
     "explanation": "Energy is measured in joules. Hertz measures frequency."
   },
   {
@@ -145,12 +145,12 @@
     "difficulty": "introductory",
     "question": "Which converts electrical energy into light?",
     "options": [
-      "A mirror reflecting a face",
       "A prism separating colors",
-      "An LED switching on",
-      "A lens focusing sunlight"
+      "A mirror reflecting a face",
+      "A photodiode under illumination",
+      "An LED switching on"
     ],
-    "correctOption": 2,
+    "correctOption": 3,
     "explanation": "LEDs generate light using electrical energy; lenses and mirrors mainly redirect existing light."
   },
   {
@@ -159,12 +159,12 @@
     "difficulty": "introductory",
     "question": "What does energy conservation imply for an illuminated sample?",
     "options": [
-      "The sample creates unlimited energy",
-      "All incident light must be reflected",
+      "All incoming optical energy must leave as light",
+      "Incoming energy must be accounted for in outgoing energy, storage, or conversion",
       "All incident photons must double their energy",
-      "Incoming energy must be accounted for in outgoing energy, storage, or conversion"
+      "All incident light must be reflected"
     ],
-    "correctOption": 3,
+    "correctOption": 1,
     "explanation": "Energy may be transmitted, scattered, stored, or converted, for example into heat."
   },
   {
@@ -173,12 +173,12 @@
     "difficulty": "application",
     "question": "For light in air, what happens to frequency as wavelength increases?",
     "options": [
-      "It decreases",
       "It increases",
+      "It becomes zero",
       "It is fixed for every color",
-      "It becomes zero"
+      "It decreases"
     ],
-    "correctOption": 0,
+    "correctOption": 3,
     "explanation": "At approximately fixed speed, speed equals frequency times wavelength."
   },
   {
@@ -188,11 +188,11 @@
     "question": "Which photon has more energy?",
     "options": [
       "Color cannot be related to photon energy",
-      "A blue photon rather than a red one",
       "A red photon rather than a blue one",
+      "A blue photon rather than a red one",
       "They must have identical energy"
     ],
-    "correctOption": 1,
+    "correctOption": 2,
     "explanation": "Photon energy increases with frequency: shorter-wavelength blue photons have more energy."
   },
   {
@@ -201,12 +201,12 @@
     "difficulty": "application",
     "question": "How many nanometers are in one micrometer?",
     "options": [
-      "10",
-      "1000000",
       "1000",
-      "1"
+      "1",
+      "100",
+      "1000000"
     ],
-    "correctOption": 2,
+    "correctOption": 0,
     "explanation": "A micrometer is 10^-6 m and a nanometer is 10^-9 m."
   },
   {
@@ -215,12 +215,12 @@
     "difficulty": "application",
     "question": "Light enters glass from air. Which quantity remains unchanged?",
     "options": [
-      "Propagation speed",
+      "Frequency",
       "Wavelength",
       "Direction in every case",
-      "Frequency"
+      "Propagation speed"
     ],
-    "correctOption": 3,
+    "correctOption": 0,
     "explanation": "Frequency is unchanged at a stationary interface; speed and wavelength can change."
   },
   {
@@ -229,12 +229,12 @@
     "difficulty": "application",
     "question": "A lamp delivers twice the optical power of another. What does that mean?",
     "options": [
-      "Twice as much light energy per second",
       "Twice the energy of every photon",
       "Twice the wavelength",
-      "Twice the speed of light"
+      "Twice as much light energy per second",
+      "Twice as much total energy regardless of duration"
     ],
-    "correctOption": 0,
+    "correctOption": 2,
     "explanation": "Power is energy per unit time; it is distinct from individual photon energy."
   },
   {
@@ -243,12 +243,12 @@
     "difficulty": "application",
     "question": "A laser is labeled 5 mW. What quantity is specified?",
     "options": [
-      "Beam diameter",
-      "Optical power",
+      "Frequency",
       "Wavelength",
-      "Frequency"
+      "Optical power",
+      "Optical energy"
     ],
-    "correctOption": 1,
+    "correctOption": 2,
     "explanation": "Watts measure power; a milliwatt is a thousandth of a watt."
   },
   {
@@ -257,12 +257,12 @@
     "difficulty": "challenge",
     "question": "A source emits 2 joules in 4 seconds. What is its average power?",
     "options": [
-      "2 watts",
-      "4 watts",
       "0.5 watt",
-      "8 watts"
+      "2 watts",
+      "8 watts",
+      "4 watts"
     ],
-    "correctOption": 2,
+    "correctOption": 0,
     "explanation": "Power = energy / time = 2 / 4 = 0.5 W."
   },
   {
@@ -271,13 +271,293 @@
     "difficulty": "challenge",
     "question": "If refractive index is 1.5 and c is 300 million m/s, what is the light speed in the material?",
     "options": [
-      "450 million m/s",
-      "300 million m/s",
+      "200 million m/s",
       "150 million m/s",
-      "200 million m/s"
+      "300 million m/s",
+      "450 million m/s"
+    ],
+    "correctOption": 0,
+    "explanation": "n = c / v, so v = 300 / 1.5 = 200 million m/s."
+  },
+  {
+    "id": "light-21",
+    "category": "light",
+    "difficulty": "introductory",
+    "question": "What do we call the distance from one wave crest to the next?",
+    "options": [
+      "Amplitude",
+      "Frequency",
+      "Wavelength",
+      "Brightness"
+    ],
+    "correctOption": 2,
+    "explanation": "Wavelength is the spatial distance over one complete wave cycle."
+  },
+  {
+    "id": "light-22",
+    "category": "light",
+    "difficulty": "introductory",
+    "question": "Which device is designed to separate white light into colors?",
+    "options": [
+      "A plain mirror",
+      "A prism",
+      "A converging lens",
+      "A battery"
+    ],
+    "correctOption": 1,
+    "explanation": "Refraction through a prism depends on wavelength, separating colors."
+  },
+  {
+    "id": "light-23",
+    "category": "light",
+    "difficulty": "introductory",
+    "question": "What does the hertz unit measure?",
+    "options": [
+      "Meters per pixel",
+      "Radians per second",
+      "Cells per milliliter",
+      "Cycles per second"
     ],
     "correctOption": 3,
-    "explanation": "n = c / v, so v = 300 / 1.5 = 200 million m/s."
+    "explanation": "One hertz means one cycle each second."
+  },
+  {
+    "id": "light-24",
+    "category": "light",
+    "difficulty": "introductory",
+    "question": "Which color is at the short-wavelength end of visible light?",
+    "options": [
+      "Violet",
+      "Orange",
+      "Blue",
+      "Yellow"
+    ],
+    "correctOption": 0,
+    "explanation": "Violet light has a shorter wavelength than the other listed visible colors."
+  },
+  {
+    "id": "light-25",
+    "category": "light",
+    "difficulty": "introductory",
+    "question": "What is the surface normal used for in a reflection diagram?",
+    "options": [
+      "Measuring the mirror's mass",
+      "Measuring angles relative to the mirror surface",
+      "Measuring the ray angles",
+      "Defining the room temperature"
+    ],
+    "correctOption": 2,
+    "explanation": "Incident and reflected angles are measured from a line perpendicular to the surface."
+  },
+  {
+    "id": "light-26",
+    "category": "light",
+    "difficulty": "introductory",
+    "question": "Which source emits light because it is hot?",
+    "options": [
+      "A glass window",
+      "An incandescent filament",
+      "A fluorescent dye under blue illumination",
+      "A passive mirror"
+    ],
+    "correctOption": 1,
+    "explanation": "A heated filament emits thermal radiation, part of which is visible."
+  },
+  {
+    "id": "light-27",
+    "category": "light",
+    "difficulty": "introductory",
+    "question": "What does ultraviolet mean relative to visible violet light?",
+    "options": [
+      "No wavelength",
+      "Shorter wavelength",
+      "Longer wavelength than red",
+      "Longer wavelength"
+    ],
+    "correctOption": 1,
+    "explanation": "Ultraviolet lies beyond the violet, shorter-wavelength end of the visible spectrum."
+  },
+  {
+    "id": "light-28",
+    "category": "light",
+    "difficulty": "introductory",
+    "question": "What is a lens's focal point?",
+    "options": [
+      "The region where suitable incoming rays converge",
+      "The center of the light source",
+      "The electrical connection",
+      "The point where all rays from any direction meet"
+    ],
+    "correctOption": 0,
+    "explanation": "A converging lens brings parallel paraxial rays toward a focal region."
+  },
+  {
+    "id": "light-29",
+    "category": "light",
+    "difficulty": "introductory",
+    "question": "Which quantity describes energy delivered each second?",
+    "options": [
+      "Bit depth",
+      "Wavelength",
+      "Power",
+      "Energy"
+    ],
+    "correctOption": 2,
+    "explanation": "Power is the rate at which energy is transferred."
+  },
+  {
+    "id": "light-30",
+    "category": "light",
+    "difficulty": "introductory",
+    "question": "Which phenomenon lets us see an image in a flat mirror?",
+    "options": [
+      "Radioactivity",
+      "Refraction",
+      "Absorption alone",
+      "Reflection"
+    ],
+    "correctOption": 3,
+    "explanation": "The mirror redirects incident light toward the observer."
+  },
+  {
+    "id": "light-31",
+    "category": "light",
+    "difficulty": "introductory",
+    "question": "Which statement about ordinary visible light is correct?",
+    "options": [
+      "It is a stream of cells",
+      "It consists of pressure waves",
+      "It is electromagnetic radiation",
+      "It is a mechanical wave"
+    ],
+    "correctOption": 2,
+    "explanation": "Visible light is a small part of the electromagnetic spectrum."
+  },
+  {
+    "id": "light-32",
+    "category": "light",
+    "difficulty": "introductory",
+    "question": "What is the unit for wavelength in the SI system?",
+    "options": [
+      "Meter",
+      "Hertz",
+      "Nanometer",
+      "Joule per second squared"
+    ],
+    "correctOption": 0,
+    "explanation": "Wavelength is a length, although nanometers are more convenient for visible light."
+  },
+  {
+    "id": "light-33",
+    "category": "light",
+    "difficulty": "application",
+    "question": "A color filter passes mostly green light from a white beam. What reaches a detector behind it?",
+    "options": [
+      "Only X-rays",
+      "Mostly blue wavelengths",
+      "Only sound",
+      "Mostly green wavelengths"
+    ],
+    "correctOption": 3,
+    "explanation": "A spectral filter transmits selected wavelengths and rejects others."
+  },
+  {
+    "id": "light-34",
+    "category": "light",
+    "difficulty": "application",
+    "question": "A light ray strikes a plane mirror at an angle of 30 degrees to the normal. At what angle to the normal is it reflected?",
+    "options": [
+      "60 degrees",
+      "0 degrees",
+      "90 degrees",
+      "30 degrees"
+    ],
+    "correctOption": 3,
+    "explanation": "The angle of reflection equals the angle of incidence, both measured from the normal."
+  },
+  {
+    "id": "light-35",
+    "category": "light",
+    "difficulty": "application",
+    "question": "Why can a camera see a lamp even if the room is dark?",
+    "options": [
+      "The camera creates light from nothing",
+      "The lamp must emit sound",
+      "Light from the lamp reaches the camera",
+      "The camera detects light reflected from surrounding walls"
+    ],
+    "correctOption": 2,
+    "explanation": "A detector needs photons from or reflected by its subject."
+  },
+  {
+    "id": "light-36",
+    "category": "light",
+    "difficulty": "application",
+    "question": "A ray crosses from air into water at an angle. What can change?",
+    "options": [
+      "Its frequency and speed",
+      "Its direction and speed",
+      "Its frequency only",
+      "Its identity as electromagnetic radiation"
+    ],
+    "correctOption": 1,
+    "explanation": "Refraction can change propagation direction and speed at an interface."
+  },
+  {
+    "id": "light-37",
+    "category": "light",
+    "difficulty": "application",
+    "question": "If a shutter blocks half the exposure time, what generally happens to collected light in a steady scene?",
+    "options": [
+      "Wavelength doubles",
+      "Half as much light per unit time reaches the sensor",
+      "About half as much is collected",
+      "Twice as much is collected"
+    ],
+    "correctOption": 2,
+    "explanation": "For constant illumination, photon counts scale approximately with exposure time."
+  },
+  {
+    "id": "light-38",
+    "category": "light",
+    "difficulty": "application",
+    "question": "Two light pulses travel through the same uniform medium at the same speed. One follows a longer path. Which quantity is greater for that pulse?",
+    "options": [
+      "Photon energy",
+      "Source power",
+      "Its wavelength",
+      "Travel time"
+    ],
+    "correctOption": 3,
+    "explanation": "For a fixed propagation speed, travel time equals path length divided by speed; the longer path takes longer."
+  },
+  {
+    "id": "light-39",
+    "category": "light",
+    "difficulty": "challenge",
+    "question": "A 10 W lamp runs for 3 seconds. How much energy does it deliver at that power?",
+    "options": [
+      "3 joules",
+      "0.3 joule",
+      "3.3 joules",
+      "30 joules"
+    ],
+    "correctOption": 3,
+    "explanation": "Energy equals power times time: 10 W x 3 s = 30 J."
+  },
+  {
+    "id": "light-40",
+    "category": "light",
+    "difficulty": "challenge",
+    "question": "Two photons have wavelengths 400 nm and 800 nm. Which has approximately twice the photon energy?",
+    "options": [
+      "Neither has energy",
+      "They have equal energy",
+      "The 800 nm photon",
+      "The 400 nm photon"
+    ],
+    "correctOption": 3,
+    "explanation": "Photon energy is inversely proportional to wavelength, so halving wavelength doubles energy."
   },
   {
     "id": "biooptics-1",
@@ -285,12 +565,12 @@
     "difficulty": "introductory",
     "question": "What is absorption of light?",
     "options": [
-      "Transfer of light energy to matter",
-      "Only a change in direction",
+      "Magnification of an image",
       "Creation of energy from nothing",
-      "Magnification of an image"
+      "Transfer of light energy to matter",
+      "Redirection of light without transfer of energy to matter"
     ],
-    "correctOption": 0,
+    "correctOption": 2,
     "explanation": "Absorbed energy may later become heat or be re-emitted."
   },
   {
@@ -299,12 +579,12 @@
     "difficulty": "introductory",
     "question": "What does scattering primarily do?",
     "options": [
-      "Always increases frequency",
       "Redistributes propagation directions",
-      "Always destroys every photon",
-      "Converts every photon into an electron"
+      "Converts every photon into an electron",
+      "Always increases frequency",
+      "Removes light energy by converting it into heat"
     ],
-    "correctOption": 1,
+    "correctOption": 0,
     "explanation": "In elastic scattering light is redirected without a change in frequency."
   },
   {
@@ -313,8 +593,8 @@
     "difficulty": "introductory",
     "question": "Why is diluted milk cloudier than clear water?",
     "options": [
-      "Water removes all photons",
       "Milk has no optical interactions",
+      "Dissolved milk proteins absorb all visible wavelengths",
       "Suspended structures scatter light",
       "Milk generates X-rays"
     ],
@@ -327,12 +607,12 @@
     "difficulty": "introductory",
     "question": "What normally precedes fluorescence emission?",
     "options": [
-      "Cooling to absolute zero",
-      "Exposure to ultrasound only",
+      "Absorption of suitable excitation light",
       "Movement through a magnetic coil",
-      "Absorption of suitable excitation light"
+      "Cooling to absolute zero",
+      "Elastic scattering of the incident light"
     ],
-    "correctOption": 3,
+    "correctOption": 0,
     "explanation": "Fluorescence follows optical excitation of the fluorophore."
   },
   {
@@ -341,12 +621,12 @@
     "difficulty": "introductory",
     "question": "Which substance strongly contributes to visible absorption in blood?",
     "options": [
-      "Hemoglobin",
+      "Water in plasma",
       "Air",
-      "Pure glass",
+      "Hemoglobin",
       "Silicone tubing"
     ],
-    "correctOption": 0,
+    "correctOption": 2,
     "explanation": "Hemoglobin absorbs light with a spectrum that depends on oxygenation."
   },
   {
@@ -356,11 +636,11 @@
     "question": "What is a fluorescent label useful for?",
     "options": [
       "Increasing the speed of light",
+      "Making an unlabeled target emit its own light",
       "Locating a labeled target through emitted light",
-      "Making all tissue transparent",
-      "Removing every source of noise"
+      "Making all tissue transparent"
     ],
-    "correctOption": 1,
+    "correctOption": 2,
     "explanation": "Labels help distinguish selected structures from their surroundings."
   },
   {
@@ -369,12 +649,12 @@
     "difficulty": "introductory",
     "question": "A sample absorbs light and warms up. Where did some energy go?",
     "options": [
-      "Into extra cells",
-      "Into a larger unit of wavelength",
+      "Into light scattered at new angles",
       "Into thermal energy",
-      "It disappeared"
+      "It disappeared",
+      "Into a larger unit of wavelength"
     ],
-    "correctOption": 2,
+    "correctOption": 1,
     "explanation": "Non-radiative processes can convert optical energy into heat."
   },
   {
@@ -383,12 +663,12 @@
     "difficulty": "introductory",
     "question": "What is autofluorescence?",
     "options": [
-      "Only light emitted by an added laser",
-      "Reflection from a monitor",
       "Noise produced only by software",
-      "Fluorescence from naturally present sample components"
+      "Reflection from a monitor",
+      "Fluorescence from naturally present sample components",
+      "Fluorescence from an externally added dye"
     ],
-    "correctOption": 3,
+    "correctOption": 2,
     "explanation": "Samples can fluoresce without added labels, contributing background."
   },
   {
@@ -397,12 +677,12 @@
     "difficulty": "introductory",
     "question": "How does bioluminescence differ from ordinary fluorescence?",
     "options": [
+      "Bioluminescence requires ultraviolet excitation",
       "A chemical reaction generates light without optical excitation",
-      "It always needs a blue excitation lamp",
       "It occurs only in glass",
       "It is identical to mirror reflection"
     ],
-    "correctOption": 0,
+    "correctOption": 1,
     "explanation": "Bioluminescent reactions provide the energy needed to generate light."
   },
   {
@@ -412,11 +692,11 @@
     "question": "What does GFP stand for?",
     "options": [
       "Glass filter plate",
-      "Green fluorescent protein",
-      "General focusing power",
-      "Gamma frequency probe"
+      "General fluorescence probe",
+      "Gamma frequency probe",
+      "Green fluorescent protein"
     ],
-    "correctOption": 1,
+    "correctOption": 3,
     "explanation": "GFP is a fluorescent protein used to label biological structures."
   },
   {
@@ -425,12 +705,12 @@
     "difficulty": "introductory",
     "question": "Which pigment contributes to skin absorption?",
     "options": [
+      "Glass",
       "Air",
-      "Stainless steel",
-      "Melanin",
-      "Glass"
+      "Collagen",
+      "Melanin"
     ],
-    "correctOption": 2,
+    "correctOption": 3,
     "explanation": "Melanin contributes to both skin pigmentation and optical absorption."
   },
   {
@@ -439,12 +719,12 @@
     "difficulty": "introductory",
     "question": "What does a detector measure after a beam passes through a sample?",
     "options": [
-      "Every molecule individually",
       "Only sample mass",
-      "Only sample temperature",
-      "The light reaching the detector"
+      "The light initially emitted by the source",
+      "The light reaching the detector",
+      "Only sample temperature"
     ],
-    "correctOption": 3,
+    "correctOption": 2,
     "explanation": "Sample properties are inferred from detected light, not directly read molecule by molecule."
   },
   {
@@ -453,12 +733,12 @@
     "difficulty": "application",
     "question": "More milk is added to water in a fixed imaging setup. What is likely?",
     "options": [
-      "More scattering and greater blur",
+      "Greater absorption with unchanged scattering",
       "A guaranteed increase in resolution",
-      "No possible optical change",
-      "Complete removal of scattering"
+      "Complete removal of scattering",
+      "More scattering and greater blur"
     ],
-    "correctOption": 0,
+    "correctOption": 3,
     "explanation": "More scatterers generally degrade direct imaging through the mixture."
   },
   {
@@ -467,12 +747,12 @@
     "difficulty": "application",
     "question": "Why can an object appear red under white illumination?",
     "options": [
+      "It absorbs red light more strongly than blue light",
       "It absorbs red and reflects only blue",
-      "Relatively more red light reaches the eye from it",
       "It must generate light chemically",
-      "It transmits every wavelength equally"
+      "Relatively more red light reaches the eye from it"
     ],
-    "correctOption": 1,
+    "correctOption": 3,
     "explanation": "Selective absorption and reflection or scattering affect perceived color."
   },
   {
@@ -483,10 +763,10 @@
     "options": [
       "It must be identical",
       "It is zero",
-      "It is lower",
-      "It is higher"
+      "It is higher",
+      "It is lower"
     ],
-    "correctOption": 2,
+    "correctOption": 3,
     "explanation": "Green has a longer wavelength; some absorbed energy is lost before emission."
   },
   {
@@ -496,7 +776,7 @@
     "question": "Why can fluorescent background hide a labeled cell?",
     "options": [
       "It enlarges the cell physically",
-      "It turns fluorescence into ultrasound",
+      "It increases the fluorescent label concentration",
       "It guarantees better specificity",
       "It reduces cell-to-background contrast"
     ],
@@ -509,12 +789,12 @@
     "difficulty": "application",
     "question": "Why can selected red or near-infrared wavelengths probe tissue more effectively?",
     "options": [
+      "Red light always scatters more strongly than blue light",
+      "Every label emits at those wavelengths",
       "Absorption and scattering can be more favorable",
-      "All tissues become perfectly transparent",
-      "Near-infrared is ionizing like X-rays",
-      "Every label emits at those wavelengths"
+      "All tissues become perfectly transparent"
     ],
-    "correctOption": 0,
+    "correctOption": 2,
     "explanation": "Tissue optical properties depend on wavelength; favorable windows improve penetration, not perfect transparency."
   },
   {
@@ -523,12 +803,12 @@
     "difficulty": "application",
     "question": "A cloudy sample makes a detected beam dimmer. Was all missing light necessarily absorbed?",
     "options": [
-      "No; matter cannot interact with light",
-      "No; scattering can redirect light away from the detector",
+      "Yes; all loss of direct-beam intensity is absorption",
       "Yes; scattering cannot affect detection",
-      "Yes; all dimming is absorption"
+      "No; scattering can redirect light away from the detector",
+      "No; matter cannot interact with light"
     ],
-    "correctOption": 1,
+    "correctOption": 2,
     "explanation": "Detector geometry matters: redirected light may not be collected."
   },
   {
@@ -537,27 +817,307 @@
     "difficulty": "challenge",
     "question": "A clear absorbing solution transmits 50% over 1 cm. Under Beer-Lambert conditions, what passes through 2 cm?",
     "options": [
-      "0%",
+      "50%",
       "75%",
-      "25%",
-      "50%"
+      "0%",
+      "25%"
     ],
-    "correctOption": 2,
+    "correctOption": 3,
     "explanation": "Equal thicknesses multiply transmission: 0.5 x 0.5 = 0.25."
   },
   {
     "id": "biooptics-20",
     "category": "biooptics",
     "difficulty": "challenge",
-    "question": "Increasing excitation no longer increases fluorescence proportionally, and the label fades. What is plausible?",
+    "question": "A fluorescent label initially responds approximately linearly to excitation intensity. At high intensity, the signal stops increasing proportionally; during prolonged illumination it also fades. Which explanation is plausible?",
     "options": [
-      "Fluorescence must always grow without limit",
-      "The camera has improved optical resolution",
       "Light has become sound",
-      "Saturation or photobleaching"
+      "Saturation at high intensity and photobleaching over time",
+      "Only photobleaching, which occurs instantaneously at any high excitation intensity",
+      "The camera has improved optical resolution"
+    ],
+    "correctOption": 1,
+    "explanation": "A sublinear response at high intensity can result from saturation; fading over time can result from photobleaching. These are distinct phenomena."
+  },
+  {
+    "id": "biooptics-21",
+    "category": "biooptics",
+    "difficulty": "introductory",
+    "question": "What does transmission mean in a light-tissue experiment?",
+    "options": [
+      "Light passing through the sample",
+      "Light reflected back from the sample",
+      "All light turning into heat",
+      "All light returning to the source"
+    ],
+    "correctOption": 0,
+    "explanation": "Transmission is the portion emerging on the far side of a sample."
+  },
+  {
+    "id": "biooptics-22",
+    "category": "biooptics",
+    "difficulty": "introductory",
+    "question": "Why does blood often look red?",
+    "options": [
+      "Blood preferentially transmits blue light",
+      "It produces only red X-rays",
+      "Its cells contain red mirrors",
+      "Its optical absorption and return of visible wavelengths favor red appearance"
     ],
     "correctOption": 3,
-    "explanation": "The linear response has limits; intense excitation can saturate or damage fluorophores."
+    "explanation": "Hemoglobin's wavelength-dependent interactions contribute to blood's visible color."
+  },
+  {
+    "id": "biooptics-23",
+    "category": "biooptics",
+    "difficulty": "introductory",
+    "question": "What can a green fluorescent protein do when properly excited?",
+    "options": [
+      "Absorb green light and emit blue light",
+      "Emit only ultrasound",
+      "Emit green light",
+      "Block every wavelength"
+    ],
+    "correctOption": 2,
+    "explanation": "GFP can absorb excitation light and emit green fluorescence."
+  },
+  {
+    "id": "biooptics-24",
+    "category": "biooptics",
+    "difficulty": "introductory",
+    "question": "What does a tissue's optical absorption depend on?",
+    "options": [
+      "Only the size of the classroom",
+      "Only the total thickness, regardless of wavelength",
+      "Its molecules and the illumination wavelength",
+      "Only the name of the tissue"
+    ],
+    "correctOption": 2,
+    "explanation": "Different molecules absorb differently at different wavelengths."
+  },
+  {
+    "id": "biooptics-25",
+    "category": "biooptics",
+    "difficulty": "introductory",
+    "question": "Which sample is likely to scatter more light?",
+    "options": [
+      "A cloudy suspension",
+      "A homogeneous clear solution",
+      "A perfectly clear glass plate",
+      "Optically clear water"
+    ],
+    "correctOption": 0,
+    "explanation": "Particles in a cloudy suspension redirect incoming light."
+  },
+  {
+    "id": "biooptics-26",
+    "category": "biooptics",
+    "difficulty": "introductory",
+    "question": "What is an absorber in tissue optics?",
+    "options": [
+      "A digital file format",
+      "A camera that enlarges cells",
+      "A structure that changes only the direction of light",
+      "A component that takes energy from incident light"
+    ],
+    "correctOption": 3,
+    "explanation": "An absorber reduces incident optical energy at wavelengths it can absorb."
+  },
+  {
+    "id": "biooptics-27",
+    "category": "biooptics",
+    "difficulty": "introductory",
+    "question": "What is an emission spectrum?",
+    "options": [
+      "Light output as a function of wavelength",
+      "A map of blood pressure only",
+      "Cell count as a function of age",
+      "The intensity of the excitation beam as a function of position"
+    ],
+    "correctOption": 0,
+    "explanation": "An emission spectrum shows how strongly a source emits at different wavelengths."
+  },
+  {
+    "id": "biooptics-28",
+    "category": "biooptics",
+    "difficulty": "introductory",
+    "question": "What is an excitation wavelength?",
+    "options": [
+      "A wavelength used to energize a fluorophore",
+      "The number of image pixels",
+      "The wavelength at which the fluorophore emits most strongly",
+      "The diameter of a lens"
+    ],
+    "correctOption": 0,
+    "explanation": "Excitation light must be in a range the fluorophore can absorb."
+  },
+  {
+    "id": "biooptics-29",
+    "category": "biooptics",
+    "difficulty": "introductory",
+    "question": "Which fluorescent signal is usually easiest to identify?",
+    "options": [
+      "A dim label over a bright background",
+      "A fully saturated image",
+      "A bright label over a dim background",
+      "No label and no detector"
+    ],
+    "correctOption": 2,
+    "explanation": "Good contrast between signal and background helps detection."
+  },
+  {
+    "id": "biooptics-30",
+    "category": "biooptics",
+    "difficulty": "introductory",
+    "question": "What is tissue transparency?",
+    "options": [
+      "The extent to which light can pass through tissue without strong loss or scrambling",
+      "The number of antibodies in blood",
+      "The amount of light absorbed, regardless of scattering",
+      "The speed of an ultrasound probe"
+    ],
+    "correctOption": 0,
+    "explanation": "Absorption and scattering limit how clearly light passes through tissue."
+  },
+  {
+    "id": "biooptics-31",
+    "category": "biooptics",
+    "difficulty": "introductory",
+    "question": "Why might one use two colors to label two cell structures?",
+    "options": [
+      "To distinguish their signals using suitable filters",
+      "To remove all need for calibration",
+      "To force both structures to become identical",
+      "To increase the intensity of both labels equally"
+    ],
+    "correctOption": 0,
+    "explanation": "Separate excitation and emission bands can help distinguish labeled structures."
+  },
+  {
+    "id": "biooptics-32",
+    "category": "biooptics",
+    "difficulty": "introductory",
+    "question": "A clear liquid looks dark at one wavelength. What is a plausible explanation?",
+    "options": [
+      "Its molecules are larger than the lens",
+      "It cannot transmit any wavelength",
+      "It absorbs strongly at that wavelength",
+      "It scatters strongly at that wavelength without absorption"
+    ],
+    "correctOption": 2,
+    "explanation": "A sample can be clear at some wavelengths but absorb at others."
+  },
+  {
+    "id": "biooptics-33",
+    "category": "biooptics",
+    "difficulty": "application",
+    "question": "A beam is detected after passing through blood-rich tissue. Why might it be weaker?",
+    "options": [
+      "The light gained infinite energy",
+      "Hemoglobin has absorbed some of the light",
+      "No optical interaction is possible",
+      "Hemoglobin has increased the detected light by fluorescence"
+    ],
+    "correctOption": 1,
+    "explanation": "Hemoglobin absorption can reduce transmitted intensity."
+  },
+  {
+    "id": "biooptics-34",
+    "category": "biooptics",
+    "difficulty": "application",
+    "question": "A scattering sample sends light to the side. Which measurement might reveal it?",
+    "options": [
+      "A detector placed off the direct beam",
+      "A detector aligned with the transmitted beam only",
+      "Only a thermometer on the monitor",
+      "A sample scale with no illumination"
+    ],
+    "correctOption": 0,
+    "explanation": "An off-axis detector can collect redirected, scattered light."
+  },
+  {
+    "id": "biooptics-35",
+    "category": "biooptics",
+    "difficulty": "application",
+    "question": "A labeled sample is brightly excited but gives weak fluorescence. What is one reasonable possibility?",
+    "options": [
+      "The sample must be radioactive",
+      "The fluorophore must be absent whenever fluorescence is weak",
+      "Few labels are present or the optical setup misses their emission",
+      "The camera is measuring pressure"
+    ],
+    "correctOption": 2,
+    "explanation": "Signal depends on label amount, excitation, collection, filters, and background."
+  },
+  {
+    "id": "biooptics-36",
+    "category": "biooptics",
+    "difficulty": "application",
+    "question": "Why does a deeper fluorescent target often look dimmer?",
+    "options": [
+      "The fluorophore concentration necessarily decreases with depth",
+      "The target automatically shrinks",
+      "Light becomes heavier with depth",
+      "Excitation and emitted light can be attenuated on their paths"
+    ],
+    "correctOption": 3,
+    "explanation": "Both incident and emitted light may be absorbed or scattered before detection."
+  },
+  {
+    "id": "biooptics-37",
+    "category": "biooptics",
+    "difficulty": "application",
+    "question": "Why might a green dye be easier to see in a clear specimen than deep in tissue?",
+    "options": [
+      "Green dyes stop emitting in all tissue",
+      "Tissue always shifts green fluorescence to red wavelengths",
+      "Tissue can absorb and scatter the dye's light",
+      "The lens changes the dye's chemical identity"
+    ],
+    "correctOption": 2,
+    "explanation": "Propagation through tissue reduces and spreads both excitation and fluorescence."
+  },
+  {
+    "id": "biooptics-38",
+    "category": "biooptics",
+    "difficulty": "application",
+    "question": "Two equal labels give different measured intensities at different depths. Is concentration alone enough to explain the difference?",
+    "options": [
+      "No; every dye becomes a new chemical at depth",
+      "No; wavelength-dependent tissue attenuation matters",
+      "Yes; detected intensity is always directly proportional to concentration",
+      "Yes; depth cannot influence measurements"
+    ],
+    "correctOption": 1,
+    "explanation": "Fluorescence from deeper targets undergoes different excitation and emission losses."
+  },
+  {
+    "id": "biooptics-39",
+    "category": "biooptics",
+    "difficulty": "challenge",
+    "question": "A beam has incident intensity 100 units and transmitted intensity 20 units. What is transmittance?",
+    "options": [
+      "20",
+      "5.0",
+      "0.80",
+      "0.20"
+    ],
+    "correctOption": 3,
+    "explanation": "Transmittance is transmitted divided by incident intensity: 20 / 100 = 0.20."
+  },
+  {
+    "id": "biooptics-40",
+    "category": "biooptics",
+    "difficulty": "challenge",
+    "question": "A fluorescent emission peak is at 550 nm and excitation at 500 nm. Which has the longer wavelength?",
+    "options": [
+      "Excitation",
+      "They are equal",
+      "Neither has wavelength",
+      "Emission"
+    ],
+    "correctOption": 3,
+    "explanation": "550 nm is longer than 500 nm, consistent with typical fluorescence energy loss."
   },
   {
     "id": "microscopy-1",
@@ -565,12 +1125,12 @@
     "difficulty": "introductory",
     "question": "What does a converging lens do to parallel rays near its axis?",
     "options": [
-      "Brings them toward a focus",
-      "Makes them vanish",
+      "Always sends them backward",
       "Converts them into sound",
-      "Always sends them backward"
+      "Makes all parallel rays remain parallel after the lens",
+      "Brings them toward a focus"
     ],
-    "correctOption": 0,
+    "correctOption": 3,
     "explanation": "A converging lens redirects paraxial parallel rays toward its focal region."
   },
   {
@@ -579,12 +1139,12 @@
     "difficulty": "introductory",
     "question": "What does magnification describe?",
     "options": [
-      "The minimum detectable wavelength",
       "Image size relative to object size",
-      "Photons absorbed per second",
-      "Sample purity"
+      "Sample purity",
+      "The minimum detectable wavelength",
+      "Smallest distinguishable separation between objects"
     ],
-    "correctOption": 1,
+    "correctOption": 0,
     "explanation": "Magnification enlarges the image, but does not alone determine resolved detail."
   },
   {
@@ -593,12 +1153,12 @@
     "difficulty": "introductory",
     "question": "What does optical resolution describe?",
     "options": [
-      "Only lamp brightness",
+      "Image size relative to object size",
       "Microscope mass",
-      "Ability to distinguish nearby details",
-      "Only displayed image size"
+      "Only lamp brightness",
+      "Ability to distinguish nearby details"
     ],
-    "correctOption": 2,
+    "correctOption": 3,
     "explanation": "Resolution concerns whether neighboring structures can be distinguished."
   },
   {
@@ -609,7 +1169,7 @@
     "options": [
       "Power switch",
       "Computer keyboard",
-      "Camera cable",
+      "Eyepiece lens",
       "Objective lens"
     ],
     "correctOption": 3,
@@ -621,12 +1181,12 @@
     "difficulty": "introductory",
     "question": "Why use an excitation filter?",
     "options": [
+      "To block the excitation wavelengths from reaching the sample",
       "To select wavelengths that excite the label",
-      "To count cells mechanically",
-      "To enlarge the specimen",
-      "To remove the objective"
+      "To remove the objective",
+      "To count cells mechanically"
     ],
-    "correctOption": 0,
+    "correctOption": 1,
     "explanation": "The excitation filter selects the illumination band delivered to a fluorophore."
   },
   {
@@ -635,12 +1195,12 @@
     "difficulty": "introductory",
     "question": "What is an emission filter mainly for?",
     "options": [
+      "To pass excitation light and reject fluorescence",
       "Replacing the detector",
-      "Passing desired fluorescence while rejecting unwanted light",
       "Heating the sample",
-      "Making all colors identical"
+      "Passing desired fluorescence while rejecting unwanted light"
     ],
-    "correctOption": 1,
+    "correctOption": 3,
     "explanation": "It helps separate weak fluorescence from excitation and other background."
   },
   {
@@ -649,12 +1209,12 @@
     "difficulty": "introductory",
     "question": "What does a dichroic mirror do?",
     "options": [
+      "Reflects all wavelengths equally",
+      "Stores digital pixels",
       "Measures specimen weight",
-      "Produces antibodies",
-      "Reflects and transmits different wavelength bands",
-      "Stores digital pixels"
+      "Reflects and transmits different wavelength bands"
     ],
-    "correctOption": 2,
+    "correctOption": 3,
     "explanation": "Its wavelength-dependent behavior routes excitation and emission differently."
   },
   {
@@ -663,9 +1223,9 @@
     "difficulty": "introductory",
     "question": "What is the purpose of focusing?",
     "options": [
-      "Changing DNA into RNA",
-      "Setting every pixel to its maximum",
       "Removing all tissue scattering",
+      "Changing DNA into RNA",
+      "Increasing magnification without moving the focus plane",
       "Bringing the plane of interest into sharp view"
     ],
     "correctOption": 3,
@@ -677,12 +1237,12 @@
     "difficulty": "introductory",
     "question": "At fixed wavelength, what can a higher numerical aperture provide?",
     "options": [
-      "Finer optical resolution",
       "Only a larger computer file",
-      "Lower photon energy",
+      "Finer optical resolution",
+      "Greater magnification without any change in resolution",
       "Fewer cells in the sample"
     ],
-    "correctOption": 0,
+    "correctOption": 1,
     "explanation": "Higher numerical aperture collects a wider angular range of light."
   },
   {
@@ -691,12 +1251,12 @@
     "difficulty": "introductory",
     "question": "What illuminates a specimen in light-sheet microscopy?",
     "options": [
+      "A broad cone of illumination through the entire specimen",
       "An X-ray tube in every case",
       "A thin sheet of light",
-      "Only a magnetic field",
       "A metal sheet"
     ],
-    "correctOption": 1,
+    "correctOption": 2,
     "explanation": "A light sheet preferentially excites a thin specimen plane."
   },
   {
@@ -706,7 +1266,7 @@
     "question": "What is an endoscope useful for?",
     "options": [
       "Measuring every protein concentration",
-      "Replacing every imaging modality",
+      "Viewing the entire body through X-ray transmission",
       "Viewing accessible internal surfaces",
       "Sorting blood cells by charge"
     ],
@@ -719,9 +1279,9 @@
     "difficulty": "introductory",
     "question": "In bright-field transmission microscopy, what forms the image?",
     "options": [
-      "Sound reflected by cells",
       "Gamma rays from a tracer",
-      "Heat emitted by the camera",
+      "Sound reflected by cells",
+      "Light emitted by fluorophores in the specimen",
       "Light transmitted through the specimen"
     ],
     "correctOption": 3,
@@ -733,12 +1293,12 @@
     "difficulty": "application",
     "question": "You digitally enlarge a blurry image tenfold. What necessarily changes?",
     "options": [
-      "Displayed size, but not original resolved detail",
-      "Objective numerical aperture",
       "Specimen dimensions",
-      "Acquisition wavelength"
+      "Optical resolution improves tenfold",
+      "Objective numerical aperture",
+      "Displayed size, but not original resolved detail"
     ],
-    "correctOption": 0,
+    "correctOption": 3,
     "explanation": "Display zoom cannot recover optical detail that was never recorded."
   },
   {
@@ -749,7 +1309,7 @@
     "options": [
       "Neither objective can form an image",
       "No; magnification alone does not guarantee it",
-      "Yes; magnification is the only factor",
+      "Yes; greater magnification always yields smaller resolvable distances",
       "Yes; wavelength is irrelevant"
     ],
     "correctOption": 1,
@@ -761,10 +1321,10 @@
     "difficulty": "application",
     "question": "Blue excitation overwhelms weak green fluorescence. What helps?",
     "options": [
-      "Using a larger monitor only",
+      "Removing every filter",
       "Adding more blue background",
       "An emission filter that rejects blue light",
-      "Removing every filter"
+      "Increasing the intensity of blue excitation without filtering"
     ],
     "correctOption": 2,
     "explanation": "Spectral rejection of excitation helps detect weak fluorescence."
@@ -775,9 +1335,9 @@
     "difficulty": "application",
     "question": "Why is light-sheet illumination useful for living samples?",
     "options": [
-      "It makes all samples transparent",
       "It removes the need for a detector",
       "It gives infinite resolution",
+      "Aperture diameter alone, independent of wavelength",
       "It reduces unnecessary excitation outside the observed plane"
     ],
     "correctOption": 3,
@@ -789,12 +1349,12 @@
     "difficulty": "application",
     "question": "What is a neutral-density filter intended to do?",
     "options": [
+      "A larger field of view with unchanged resolution",
       "Attenuate intensity approximately uniformly over its specified range",
-      "Select one narrow color in every case",
-      "Increase light speed",
-      "Increase lens magnification"
+      "Increase lens magnification",
+      "Select one narrow color in every case"
     ],
-    "correctOption": 0,
+    "correctOption": 1,
     "explanation": "It reduces intensity rather than primarily selecting an excitation or emission band."
   },
   {
@@ -803,12 +1363,12 @@
     "difficulty": "application",
     "question": "Why use the intended immersion medium with a compatible objective?",
     "options": [
-      "It removes diffraction entirely",
       "Its refractive index can support a higher NA",
-      "It makes wavelength irrelevant",
-      "It enlarges every cell"
+      "It removes diffraction entirely",
+      "A lens with higher magnification always has higher NA",
+      "It makes wavelength irrelevant"
     ],
-    "correctOption": 1,
+    "correctOption": 0,
     "explanation": "NA = n sin(theta); a suitable medium increases n for optics designed for it."
   },
   {
@@ -817,12 +1377,12 @@
     "difficulty": "challenge",
     "question": "At equal NA, which wavelength generally permits finer diffraction-limited resolution?",
     "options": [
-      "Both must give identical resolution",
-      "Neither can be focused",
+      "650 nm rather than 450 nm",
       "450 nm rather than 650 nm",
-      "650 nm rather than 450 nm"
+      "Moving the specimen sideways without changing focus",
+      "Neither can be focused"
     ],
-    "correctOption": 2,
+    "correctOption": 1,
     "explanation": "At fixed NA, the diffraction-limited length scale increases with wavelength."
   },
   {
@@ -831,13 +1391,293 @@
     "difficulty": "challenge",
     "question": "An instrument resolves 1 micrometer. Two points are 0.2 micrometers apart. Can a larger screen alone separate them?",
     "options": [
-      "Yes; enlargement creates missing detail",
-      "Yes; display size changes NA",
+      "No; the acquisition did not resolve them",
       "Only with a red display",
-      "No; the acquisition did not resolve them"
+      "It reveals new detail that was absent in the acquired image",
+      "Yes; enlargement creates missing detail"
+    ],
+    "correctOption": 0,
+    "explanation": "Display size does not improve the information acquired by the optics."
+  },
+  {
+    "id": "microscopy-21",
+    "category": "microscopy",
+    "difficulty": "introductory",
+    "question": "What does an eyepiece help a person do?",
+    "options": [
+      "Excitation light transmitted by the sample",
+      "View the magnified image",
+      "Create antibodies",
+      "Measure blood pressure"
+    ],
+    "correctOption": 1,
+    "explanation": "The eyepiece presents the microscope image to the viewer."
+  },
+  {
+    "id": "microscopy-22",
+    "category": "microscopy",
+    "difficulty": "introductory",
+    "question": "What holds a microscope slide in place?",
+    "options": [
+      "The stage",
+      "The wavelength emitted by the fluorescent label",
+      "The fluorescent dye",
+      "The emission filter"
+    ],
+    "correctOption": 0,
+    "explanation": "The stage supports and positions the sample."
+  },
+  {
+    "id": "microscopy-23",
+    "category": "microscopy",
+    "difficulty": "introductory",
+    "question": "What is an objective's working distance?",
+    "options": [
+      "The time needed to change lenses",
+      "The distance from its front to the focused sample",
+      "Reflected illumination from the objective",
+      "The total microscope height"
+    ],
+    "correctOption": 1,
+    "explanation": "Working distance describes clearance between the objective and the specimen at focus."
+  },
+  {
+    "id": "microscopy-24",
+    "category": "microscopy",
+    "difficulty": "introductory",
+    "question": "An image is displayed at a larger size on a monitor, without changing the acquired data. What does this necessarily tell you?",
+    "options": [
+      "That its displayed scale is larger",
+      "Improved optical resolution in the specimen",
+      "That the cells grew",
+      "That optical resolution is better"
+    ],
+    "correctOption": 0,
+    "explanation": "Increasing the displayed scale does not improve the optical resolution or reveal previously unresolved details."
+  },
+  {
+    "id": "microscopy-25",
+    "category": "microscopy",
+    "difficulty": "introductory",
+    "question": "Which element records the microscope image electronically?",
+    "options": [
+      "The emission filter selects only the excitation band",
+      "A mechanical stage clip",
+      "A slide label",
+      "A camera sensor"
     ],
     "correctOption": 3,
-    "explanation": "Display size does not improve the information acquired by the optics."
+    "explanation": "An electronic detector converts arriving light into image measurements."
+  },
+  {
+    "id": "microscopy-26",
+    "category": "microscopy",
+    "difficulty": "introductory",
+    "question": "What is a fluorescent microscope's light source used for?",
+    "options": [
+      "Magnification always increases spatial resolution",
+      "Exciting fluorescent labels",
+      "Moving the sample automatically in every setup",
+      "Replacing the camera"
+    ],
+    "correctOption": 1,
+    "explanation": "Illumination supplies light that labels can absorb before emission."
+  },
+  {
+    "id": "microscopy-27",
+    "category": "microscopy",
+    "difficulty": "introductory",
+    "question": "What type of microscope shows light collected against a dark background?",
+    "options": [
+      "Bright-field",
+      "Dark-field",
+      "Reducing illumination intensity necessarily increases resolution",
+      "PET"
+    ],
+    "correctOption": 1,
+    "explanation": "Dark-field methods suppress direct background illumination and collect scattered light."
+  },
+  {
+    "id": "microscopy-28",
+    "category": "microscopy",
+    "difficulty": "introductory",
+    "question": "What is a specimen in microscopy?",
+    "options": [
+      "The monitor's color setting",
+      "An eyepiece always changes the specimen’s physical size",
+      "A unit of power",
+      "The material being examined"
+    ],
+    "correctOption": 3,
+    "explanation": "Specimen means the object or sample placed for observation."
+  },
+  {
+    "id": "microscopy-29",
+    "category": "microscopy",
+    "difficulty": "introductory",
+    "question": "What can a phase-contrast microscope reveal in suitable transparent cells?",
+    "options": [
+      "Differences linked to optical phase delays",
+      "Light-sheet microscopy illuminates the entire specimen simultaneously",
+      "Radioactive tracer concentration",
+      "Only cell temperature"
+    ],
+    "correctOption": 0,
+    "explanation": "Phase contrast turns otherwise subtle phase differences into visible intensity contrast."
+  },
+  {
+    "id": "microscopy-30",
+    "category": "microscopy",
+    "difficulty": "introductory",
+    "question": "Why use a coverslip over a microscopy sample?",
+    "options": [
+      "To remove all reflection",
+      "To generate laser light",
+      "To provide a controlled, protected optical interface",
+      "All objective lenses have the same resolution"
+    ],
+    "correctOption": 2,
+    "explanation": "Coverslips protect and position specimens and are part of the objective's optical design."
+  },
+  {
+    "id": "microscopy-31",
+    "category": "microscopy",
+    "difficulty": "introductory",
+    "question": "What happens when the specimen is far out of focus?",
+    "options": [
+      "The wavelength becomes infinite",
+      "Fine structures become blurred",
+      "Moving the specimen laterally",
+      "The objective stops existing"
+    ],
+    "correctOption": 1,
+    "explanation": "An out-of-focus plane forms a spread-out image on the detector."
+  },
+  {
+    "id": "microscopy-32",
+    "category": "microscopy",
+    "difficulty": "introductory",
+    "question": "Which action changes the plane brought into focus?",
+    "options": [
+      "Changing the team name",
+      "Increasing the image brightness",
+      "Editing the image file extension",
+      "Moving the objective or sample along the optical axis"
+    ],
+    "correctOption": 3,
+    "explanation": "Focus adjusts the relative position of the sample and objective."
+  },
+  {
+    "id": "microscopy-33",
+    "category": "microscopy",
+    "difficulty": "application",
+    "question": "A microscope image shows a dark cell on a bright transmitted background. Which mode is plausible?",
+    "options": [
+      "Bright-field imaging",
+      "Sound microscopy only",
+      "Changing magnification always changes the focal plane",
+      "PET"
+    ],
+    "correctOption": 0,
+    "explanation": "In bright-field imaging, sample attenuation can make structures appear dark against transmitted light."
+  },
+  {
+    "id": "microscopy-34",
+    "category": "microscopy",
+    "difficulty": "application",
+    "question": "A cell is visible but its small internal features merge. Which improvement could help optical resolution?",
+    "options": [
+      "Only a larger projector",
+      "A suitable higher-NA objective",
+      "A lower NA always provides finer resolution",
+      "Only a brighter screen"
+    ],
+    "correctOption": 1,
+    "explanation": "Higher numerical aperture can improve optical resolving power."
+  },
+  {
+    "id": "microscopy-35",
+    "category": "microscopy",
+    "difficulty": "application",
+    "question": "Why might an emission filter be needed even if the dye emits a distinct color?",
+    "options": [
+      "Filters increase cell number",
+      "Excitation light can be much stronger than the fluorescence",
+      "A dichroic mirror transmits all wavelengths equally",
+      "A filter creates the dye"
+    ],
+    "correctOption": 1,
+    "explanation": "Rejecting intense excitation makes weak dye emission easier to measure."
+  },
+  {
+    "id": "microscopy-36",
+    "category": "microscopy",
+    "difficulty": "application",
+    "question": "A microscope objective is labeled 20x. What does that number describe?",
+    "options": [
+      "Its wavelength in nanometers",
+      "Its numerical aperture in every case",
+      "Its nominal magnification",
+      "The optical system can resolve arbitrarily small details by zooming"
+    ],
+    "correctOption": 2,
+    "explanation": "The 20x marking refers to magnification; numerical aperture is a separate specification."
+  },
+  {
+    "id": "microscopy-37",
+    "category": "microscopy",
+    "difficulty": "application",
+    "question": "Why could focusing above and below a single cell change the apparent image?",
+    "options": [
+      "The camera becomes an X-ray tube",
+      "The cell changes species",
+      "Different depths contain different structures",
+      "Light emitted by the specimen is always monochromatic"
+    ],
+    "correctOption": 2,
+    "explanation": "A thin focal plane emphasizes structures near that depth."
+  },
+  {
+    "id": "microscopy-38",
+    "category": "microscopy",
+    "difficulty": "application",
+    "question": "You switch from 10x to 40x on the same specimen. Which is likely to become smaller?",
+    "options": [
+      "An image becomes sharper simply by increasing display size",
+      "The speed of light",
+      "The field of view",
+      "The physical cell"
+    ],
+    "correctOption": 2,
+    "explanation": "Higher magnification usually shows a smaller region of the specimen."
+  },
+  {
+    "id": "microscopy-39",
+    "category": "microscopy",
+    "difficulty": "challenge",
+    "question": "For an air objective with n = 1 and sin(theta) = 0.5, what is its numerical aperture?",
+    "options": [
+      "Increasing magnification always increases the number of resolvable features",
+      "1.5",
+      "0.25",
+      "0.5"
+    ],
+    "correctOption": 3,
+    "explanation": "NA = n sin(theta) = 1 x 0.5 = 0.5."
+  },
+  {
+    "id": "microscopy-40",
+    "category": "microscopy",
+    "difficulty": "challenge",
+    "question": "A point source gives a broad point-spread function. What does this imply for two nearby sources?",
+    "options": [
+      "The width of the illuminated field of view",
+      "They must have different colors",
+      "Their images are more likely to overlap",
+      "The lens creates a third source"
+    ],
+    "correctOption": 2,
+    "explanation": "Broader point images overlap more and are harder to distinguish."
   },
   {
     "id": "images-1",
@@ -846,9 +1686,9 @@
     "question": "What is a pixel?",
     "options": [
       "An image-array element with an assigned value",
+      "The total amount of light emitted by the object",
       "A camera lens",
-      "A cell organelle",
-      "A unit of optical power"
+      "A cell organelle"
     ],
     "correctOption": 0,
     "explanation": "Pixels sample image information on a discrete grid."
@@ -859,12 +1699,12 @@
     "difficulty": "introductory",
     "question": "What is field of view?",
     "options": [
+      "Only the number of display colors",
       "Room brightness",
       "The physical region represented in the image",
-      "Only the number of display colors",
-      "Camera mass"
+      "The number of wavelengths recorded"
     ],
-    "correctOption": 1,
+    "correctOption": 2,
     "explanation": "Field of view relates image dimensions to the imaged physical region."
   },
   {
@@ -874,11 +1714,11 @@
     "question": "What does bit depth determine?",
     "options": [
       "Number of microscope objectives",
-      "Speed of light",
-      "How many discrete values a pixel can represent",
-      "Lens focal length"
+      "The optical magnification of the lens",
+      "Lens focal length",
+      "How many discrete values a pixel can represent"
     ],
-    "correctOption": 2,
+    "correctOption": 3,
     "explanation": "Bit depth determines available digital levels, not spatial detail by itself."
   },
   {
@@ -887,12 +1727,12 @@
     "difficulty": "introductory",
     "question": "What is image contrast?",
     "options": [
-      "Only image width",
+      "A signal difference between structures or regions",
       "Only the file name",
-      "Number of people viewing the image",
-      "A signal difference between structures or regions"
+      "A pixel is a physical cell within the specimen",
+      "Number of people viewing the image"
     ],
-    "correctOption": 3,
+    "correctOption": 0,
     "explanation": "Contrast makes features distinguishable from their surroundings."
   },
   {
@@ -902,9 +1742,9 @@
     "question": "What is image noise?",
     "options": [
       "Unwanted random variation in measured values",
-      "Only sound from a camera fan",
+      "The highest possible intensity in an image",
       "Always a real anatomical structure",
-      "Always a black border"
+      "Only sound from a camera fan"
     ],
     "correctOption": 0,
     "explanation": "Random fluctuations can obscure useful signal."
@@ -916,11 +1756,11 @@
     "question": "What is detector saturation?",
     "options": [
       "All noise disappears",
+      "The image is perfectly focused",
       "The signal reaches the recordable maximum",
-      "The sample contains only water",
-      "The image is perfectly focused"
+      "Increasing bit depth always increases spatial resolution"
     ],
-    "correctOption": 1,
+    "correctOption": 2,
     "explanation": "Further increases above the detector limit cannot be distinguished."
   },
   {
@@ -929,12 +1769,12 @@
     "difficulty": "introductory",
     "question": "What does a lookup table mainly change?",
     "options": [
-      "Acquisition wavelength",
-      "Objective aperture",
       "How stored values are displayed as colors or gray levels",
-      "The original specimen"
+      "The original specimen",
+      "Acquisition wavelength",
+      "It changes the measured photon count at each pixel"
     ],
-    "correctOption": 2,
+    "correctOption": 0,
     "explanation": "A LUT changes visualization without necessarily changing stored values."
   },
   {
@@ -944,11 +1784,11 @@
     "question": "What does a point spread function describe?",
     "options": [
       "Antibody count in a well",
-      "Team score",
+      "How a system images a point source",
       "Patient heart rate",
-      "How a system images a point source"
+      "A false-color map creates new information absent from the data"
     ],
-    "correctOption": 3,
+    "correctOption": 1,
     "explanation": "An optical point generally appears as a spread-out intensity pattern."
   },
   {
@@ -957,12 +1797,12 @@
     "difficulty": "introductory",
     "question": "What does FWHM mean?",
     "options": [
-      "Full width at half maximum",
-      "Field width at highest magnification",
       "Frequency wavelength heat measurement",
-      "Fluorescence without host molecules"
+      "The separation between two intensity peaks",
+      "Field width at highest magnification",
+      "Full width at half maximum"
     ],
-    "correctOption": 0,
+    "correctOption": 3,
     "explanation": "It is a peak's width at half its height above the appropriate baseline."
   },
   {
@@ -971,12 +1811,12 @@
     "difficulty": "introductory",
     "question": "What does an intensity histogram summarize?",
     "options": [
+      "Only physical image width",
       "Every photon's wavelength separately",
-      "How often different pixel values occur",
-      "The exact position of every cell",
-      "Only physical image width"
+      "Image contrast is independent of display settings",
+      "How often different pixel values occur"
     ],
-    "correctOption": 1,
+    "correctOption": 3,
     "explanation": "A histogram counts values but does not preserve their spatial arrangement."
   },
   {
@@ -985,12 +1825,12 @@
     "difficulty": "introductory",
     "question": "What does an ImageJ line profile show?",
     "options": [
-      "The genetic sequence",
-      "Only lens temperature",
       "Intensity along a selected line",
-      "Only file names"
+      "Only file names",
+      "Only lens temperature",
+      "All pixel values become physically larger"
     ],
-    "correctOption": 2,
+    "correctOption": 0,
     "explanation": "Profiles help compare intensities, peaks, widths, and background."
   },
   {
@@ -999,12 +1839,12 @@
     "difficulty": "introductory",
     "question": "What is a voxel?",
     "options": [
-      "An antibody type",
-      "A unit of brightness",
       "An optical mirror",
-      "A volume element in a 3D image"
+      "A volume element in a 3D image",
+      "The number of pixels per unit area of the specimen",
+      "A unit of brightness"
     ],
-    "correctOption": 3,
+    "correctOption": 1,
     "explanation": "A voxel is the three-dimensional counterpart of a pixel."
   },
   {
@@ -1013,12 +1853,12 @@
     "difficulty": "application",
     "question": "An image spans 100 mm across 500 pixels. What is the horizontal pixel size?",
     "options": [
-      "0.2 mm",
-      "5 mm",
       "50 mm",
-      "500 mm"
+      "The field of view doubles",
+      "500 mm",
+      "0.2 mm"
     ],
-    "correctOption": 0,
+    "correctOption": 3,
     "explanation": "Pixel size = field of view / pixel count = 100 / 500 = 0.2 mm."
   },
   {
@@ -1027,10 +1867,10 @@
     "difficulty": "application",
     "question": "How many distinct values does an unsigned 8-bit pixel represent?",
     "options": [
-      "800",
+      "64",
       "256",
-      "8",
-      "64"
+      "The number of spatial pixels",
+      "800"
     ],
     "correctOption": 1,
     "explanation": "2^8 = 256 possible values, commonly numbered 0 through 255."
@@ -1041,12 +1881,12 @@
     "difficulty": "application",
     "question": "For equal field of view, which matrix gives smaller pixels?",
     "options": [
-      "Both must give identical pixels",
+      "Noise is always eliminated by increasing exposure",
       "Matrix size cannot affect pixel size",
-      "512 x 512 rather than 128 x 128",
-      "128 x 128 rather than 512 x 512"
+      "Both must give identical pixels",
+      "512 x 512 rather than 128 x 128"
     ],
-    "correctOption": 2,
+    "correctOption": 3,
     "explanation": "More samples across the same physical region imply smaller pixel spacing."
   },
   {
@@ -1055,12 +1895,12 @@
     "difficulty": "application",
     "question": "A peak is clipped flat at detector maximum. Why is its true FWHM unreliable?",
     "options": [
-      "The image has too many colors",
-      "FWHM applies only to sound",
+      "A saturated peak necessarily becomes narrower",
       "Clipping narrows the optical PSF",
-      "Its true maximum is unknown"
+      "Its true maximum is unknown",
+      "The image has too many colors"
     ],
-    "correctOption": 3,
+    "correctOption": 2,
     "explanation": "Saturation hides the peak height needed to locate its true half-maximum."
   },
   {
@@ -1069,12 +1909,12 @@
     "difficulty": "application",
     "question": "A point image widens after adding milk under fixed conditions. What does this suggest?",
     "options": [
-      "Scattering degraded spatial localization",
-      "Resolution necessarily improved",
+      "A point object appears as exactly one pixel",
       "The camera acquired more bits",
-      "The point became a physically larger cell"
+      "Scattering degraded spatial localization",
+      "Resolution necessarily improved"
     ],
-    "correctOption": 0,
+    "correctOption": 2,
     "explanation": "A broader point response makes neighboring structures harder to separate."
   },
   {
@@ -1083,12 +1923,12 @@
     "difficulty": "application",
     "question": "You darken the displayed background with a LUT. Does acquired signal-to-noise necessarily improve?",
     "options": [
+      "An image with more pixels always has better optical resolution",
       "Yes; the specimen becomes brighter",
       "No; display changes do not improve the original measurements",
-      "Yes; dark colors eliminate photon noise",
-      "Yes; the objective collects more light"
+      "Yes; dark colors eliminate photon noise"
     ],
-    "correctOption": 1,
+    "correctOption": 2,
     "explanation": "Visualization can help perception without producing cleaner acquired data."
   },
   {
@@ -1097,12 +1937,12 @@
     "difficulty": "challenge",
     "question": "Field of view doubles with matrix size fixed. What happens to pixel size?",
     "options": [
-      "It stays fixed",
-      "It becomes zero",
       "It doubles",
-      "It halves"
+      "It halves",
+      "It becomes zero",
+      "The image contains twice as much optical information"
     ],
-    "correctOption": 2,
+    "correctOption": 0,
     "explanation": "Pixel size is field of view divided by matrix size."
   },
   {
@@ -1111,13 +1951,293 @@
     "difficulty": "challenge",
     "question": "Two cameras sample the same optics adequately. Must smaller pixels reveal smaller optical details?",
     "options": [
-      "Yes; pixel size is the only limit",
       "Yes; smaller pixels increase NA",
-      "No; smaller pixels cannot record images",
-      "No; optical blur can remain the limiting factor"
+      "No; optical blur can remain the limiting factor",
+      "Yes; pixel size is the only limit",
+      "The display brightness is a direct measure of tissue concentration"
+    ],
+    "correctOption": 1,
+    "explanation": "Oversampling optical blur cannot restore detail that the optics did not resolve."
+  },
+  {
+    "id": "images-21",
+    "category": "images",
+    "difficulty": "introductory",
+    "question": "What does a grayscale pixel value represent?",
+    "options": [
+      "The number of detected photons in a single pixel",
+      "The lens mass",
+      "A stored intensity level",
+      "A cell's name"
+    ],
+    "correctOption": 2,
+    "explanation": "A grayscale pixel stores a numerical value that can be displayed as a shade."
+  },
+  {
+    "id": "images-22",
+    "category": "images",
+    "difficulty": "introductory",
+    "question": "What does image sampling do?",
+    "options": [
+      "All images with the same matrix size have the same pixel size",
+      "Removes every artifact",
+      "Records a finite set of positions",
+      "Changes sound into light"
+    ],
+    "correctOption": 2,
+    "explanation": "Sampling replaces a continuous scene with measurements at discrete positions."
+  },
+  {
+    "id": "images-23",
+    "category": "images",
+    "difficulty": "introductory",
+    "question": "What does quantization do?",
+    "options": [
+      "Changes the field of view",
+      "A lookup table changes the actual recorded detector values",
+      "Focuses the lens",
+      "Assigns measured values to discrete digital levels"
     ],
     "correctOption": 3,
-    "explanation": "Oversampling optical blur cannot restore detail that the optics did not resolve."
+    "explanation": "Quantization limits the possible values used to encode each measurement."
+  },
+  {
+    "id": "images-24",
+    "category": "images",
+    "difficulty": "introductory",
+    "question": "Which pixel value is the maximum of an unsigned 8-bit image?",
+    "options": [
+      "128",
+      "255",
+      "8",
+      "A 12-bit image can represent 12 intensity levels"
+    ],
+    "correctOption": 1,
+    "explanation": "Unsigned 8-bit values run from 0 through 255."
+  },
+  {
+    "id": "images-25",
+    "category": "images",
+    "difficulty": "introductory",
+    "question": "What does a 512 x 512 matrix specify?",
+    "options": [
+      "A field of view of 512 mm",
+      "The number of wavelengths measured",
+      "The number of pixel positions in two directions",
+      "Interpolation recovers details below the optical resolution limit"
+    ],
+    "correctOption": 2,
+    "explanation": "Matrix dimensions count image samples, not their physical spacing."
+  },
+  {
+    "id": "images-26",
+    "category": "images",
+    "difficulty": "introductory",
+    "question": "What is a region of interest or ROI?",
+    "options": [
+      "A selected part of an image for measurement",
+      "A radiation dose unit",
+      "A type of antibody",
+      "A histogram uniquely determines the spatial arrangement of pixels"
+    ],
+    "correctOption": 0,
+    "explanation": "An ROI is an area chosen for analysis, such as average intensity."
+  },
+  {
+    "id": "images-27",
+    "category": "images",
+    "difficulty": "introductory",
+    "question": "Which operation changes an image's appearance without necessarily changing stored pixels?",
+    "options": [
+      "Measuring a new sample",
+      "Replacing the detector",
+      "A lookup table increases the number of measured photons",
+      "Changing the display LUT"
+    ],
+    "correctOption": 3,
+    "explanation": "A display mapping can recolor existing values without reacquiring data."
+  },
+  {
+    "id": "images-28",
+    "category": "images",
+    "difficulty": "introductory",
+    "question": "What does a high signal-to-noise ratio generally mean?",
+    "options": [
+      "Contrast enhancement necessarily increases measurement accuracy",
+      "The useful signal stands out from random fluctuations",
+      "The image contains no structures",
+      "The sample is heavier"
+    ],
+    "correctOption": 1,
+    "explanation": "Higher signal relative to noise usually makes features easier to detect."
+  },
+  {
+    "id": "images-29",
+    "category": "images",
+    "difficulty": "introductory",
+    "question": "What is an imaging artifact?",
+    "options": [
+      "A feature caused by acquisition or processing rather than the object",
+      "A useful antibody",
+      "Every real anatomical structure",
+      "A grayscale image cannot encode quantitative measurements"
+    ],
+    "correctOption": 0,
+    "explanation": "Artifacts can mislead interpretation if mistaken for actual sample features."
+  },
+  {
+    "id": "images-30",
+    "category": "images",
+    "difficulty": "introductory",
+    "question": "What does an image's physical pixel size require us to know?",
+    "options": [
+      "Only the monitor color",
+      "Field of view and matrix dimensions",
+      "A smaller field of view at the same pixel count means larger pixels",
+      "Only its file name"
+    ],
+    "correctOption": 1,
+    "explanation": "Pixel size follows from physical coverage divided by samples in that direction."
+  },
+  {
+    "id": "images-31",
+    "category": "images",
+    "difficulty": "introductory",
+    "question": "What can a saturated white area hide?",
+    "options": [
+      "Differences above the detector's maximum",
+      "An intensity profile measures only the total image brightness",
+      "The original exposure time in every case",
+      "The specimen's number of lenses"
+    ],
+    "correctOption": 0,
+    "explanation": "Clipped values are all displayed or stored at the ceiling."
+  },
+  {
+    "id": "images-32",
+    "category": "images",
+    "difficulty": "introductory",
+    "question": "What does a pixel intensity of 0 mean in a typical unsigned grayscale image?",
+    "options": [
+      "No tissue exists there",
+      "The lowest encoded value",
+      "The lens is broken",
+      "An image with greater bit depth must have finer spatial resolution"
+    ],
+    "correctOption": 1,
+    "explanation": "Zero is the minimum stored value; its physical interpretation depends on the modality."
+  },
+  {
+    "id": "images-33",
+    "category": "images",
+    "difficulty": "application",
+    "question": "The same image data is shown with two different color maps. Did the underlying measurements have to change?",
+    "options": [
+      "No, only the display mapping may change",
+      "Yes, each tissue changes color physically",
+      "Yes, bit depth doubles automatically",
+      "A wider field of view at the same pixel count yields smaller pixels"
+    ],
+    "correctOption": 0,
+    "explanation": "Lookup tables can map the same stored data to different display colors."
+  },
+  {
+    "id": "images-34",
+    "category": "images",
+    "difficulty": "application",
+    "question": "An image is 100 pixels wide and spans 20 mm. What is the pixel spacing?",
+    "options": [
+      "0.2 mm",
+      "2000 mm",
+      "An 8-bit image can represent 8 intensity levels",
+      "20 mm"
+    ],
+    "correctOption": 0,
+    "explanation": "Pixel spacing is 20 mm / 100 pixels = 0.2 mm per pixel."
+  },
+  {
+    "id": "images-35",
+    "category": "images",
+    "difficulty": "application",
+    "question": "A picture is too dark on the projector. Which action changes only presentation?",
+    "options": [
+      "Repeat the experiment with a different cell",
+      "Adjust the display window or brightness",
+      "A larger image file necessarily has better optical resolution",
+      "Change the original sample concentration"
+    ],
+    "correctOption": 1,
+    "explanation": "Display settings affect viewing but do not alter already captured signal."
+  },
+  {
+    "id": "images-36",
+    "category": "images",
+    "difficulty": "application",
+    "question": "You calculate the mean intensity of a region containing many pixels with independent, zero-mean random noise. What can happen to the noise in the mean?",
+    "options": [
+      "They must grow without limit",
+      "They change every pixel's position",
+      "They can partly cancel",
+      "Averaging independent noise always increases random fluctuations"
+    ],
+    "correctOption": 2,
+    "explanation": "Averaging independent, zero-mean fluctuations reduces their contribution to the regional mean; calculating the mean does not itself blur the stored image."
+  },
+  {
+    "id": "images-37",
+    "category": "images",
+    "difficulty": "application",
+    "question": "An image of one point looks wider after adding cloudy liquid. Which curve would show this?",
+    "options": [
+      "The total pixel count without spatial information",
+      "Only the screen's refresh rate",
+      "Its intensity line profile",
+      "Only a table of team scores"
+    ],
+    "correctOption": 2,
+    "explanation": "A line profile across the point displays how its intensity spreads."
+  },
+  {
+    "id": "images-38",
+    "category": "images",
+    "difficulty": "application",
+    "question": "Why can sharpening a blurred digital image be misleading?",
+    "options": [
+      "Sharpening can always reconstruct details lost to diffraction",
+      "It converts pixels into photons",
+      "It cannot guarantee recovery of information lost during acquisition",
+      "It changes the object's DNA"
+    ],
+    "correctOption": 2,
+    "explanation": "Processing can enhance edges but cannot reliably reconstruct detail absent from the measurement."
+  },
+  {
+    "id": "images-39",
+    "category": "images",
+    "difficulty": "challenge",
+    "question": "At the same field of view, how does horizontal pixel spacing change from 100 to 200 columns?",
+    "options": [
+      "It halves",
+      "It doubles",
+      "It becomes 100 times larger",
+      "It stays fixed"
+    ],
+    "correctOption": 0,
+    "explanation": "Dividing the same physical width among twice as many columns halves spacing."
+  },
+  {
+    "id": "images-40",
+    "category": "images",
+    "difficulty": "challenge",
+    "question": "A 2-bit pixel can encode how many distinct values?",
+    "options": [
+      "8",
+      "2",
+      "16",
+      "4"
+    ],
+    "correctOption": 3,
+    "explanation": "Two bits encode 2^2 = 4 possible levels."
   },
   {
     "id": "bodyimaging-1",
@@ -1125,12 +2245,12 @@
     "difficulty": "introductory",
     "question": "What is a medical image usefully understood as?",
     "options": [
-      "A spatial map of a physical or chemical property",
-      "An exact photograph of every molecule",
       "Only an artistic drawing",
-      "A measurement with no numbers"
+      "A direct photograph of the body surface",
+      "A measurement with no numbers",
+      "A spatial map of a physical or chemical property"
     ],
-    "correctOption": 0,
+    "correctOption": 3,
     "explanation": "Different modalities map properties such as attenuation, tracer concentration, or magnetic resonance signal."
   },
   {
@@ -1139,12 +2259,12 @@
     "difficulty": "introductory",
     "question": "Which modality uses high-frequency mechanical waves?",
     "options": [
+      "MRI",
       "Fluorescence microscopy",
       "Ultrasound",
-      "MRI",
       "X-ray radiography"
     ],
-    "correctOption": 1,
+    "correctOption": 2,
     "explanation": "Ultrasound uses sound, which is mechanical rather than electromagnetic."
   },
   {
@@ -1153,12 +2273,12 @@
     "difficulty": "introductory",
     "question": "Which modality uses a strong magnetic field and radiofrequency signals?",
     "options": [
+      "Bright-field microscopy",
       "Photography",
       "Ultrasound",
-      "MRI",
-      "Bright-field microscopy"
+      "MRI"
     ],
-    "correctOption": 2,
+    "correctOption": 3,
     "explanation": "MRI commonly measures signals involving hydrogen nuclei through nuclear magnetic resonance."
   },
   {
@@ -1167,9 +2287,9 @@
     "difficulty": "introductory",
     "question": "What mainly provides contrast in an ordinary X-ray radiograph?",
     "options": [
-      "Only visible color",
-      "Only sound speed",
+      "Differences in visible-light absorption",
       "Only electrical activity",
+      "Only visible color",
       "Differences in X-ray attenuation"
     ],
     "correctOption": 3,
@@ -1182,9 +2302,9 @@
     "question": "What does tomography provide?",
     "options": [
       "Information about internal slices or volumes",
-      "Only one overlapping shadow",
-      "Only external skin color",
-      "Only a blood-sample result"
+      "Only a blood-sample result",
+      "A single two-dimensional projection",
+      "Only external skin color"
     ],
     "correctOption": 0,
     "explanation": "Tomography provides depth information rather than only one projection."
@@ -1196,11 +2316,11 @@
     "question": "Which pair uses ionizing radiation?",
     "options": [
       "Ultrasound and endoscopy",
-      "X-ray CT and PET",
       "MRI and ultrasound",
-      "Visible microscopy and MRI"
+      "Visible microscopy and MRI",
+      "X-ray CT and PET"
     ],
-    "correctOption": 1,
+    "correctOption": 3,
     "explanation": "CT uses X-rays. PET detects annihilation photons associated with a radioactive tracer."
   },
   {
@@ -1209,12 +2329,12 @@
     "difficulty": "introductory",
     "question": "What is the purpose of a contrast agent?",
     "options": [
-      "Increasing every image's magnification",
-      "Replacing all detectors",
       "Making selected tissues or processes easier to distinguish",
-      "Guaranteeing diagnosis without interpretation"
+      "Increasing the spatial resolution of every tissue equally",
+      "Guaranteeing diagnosis without interpretation",
+      "Increasing every image's magnification"
     ],
-    "correctOption": 2,
+    "correctOption": 0,
     "explanation": "Contrast agents modify detectable properties to improve target visibility."
   },
   {
@@ -1223,12 +2343,12 @@
     "difficulty": "introductory",
     "question": "What does PET commonly map?",
     "options": [
+      "Distribution of a positron-emitting tracer",
       "Only the skin surface",
-      "Only reflected sound",
       "Only visible-light absorption",
-      "Distribution of a positron-emitting tracer"
+      "The location of radioactive decay without using a tracer"
     ],
-    "correctOption": 3,
+    "correctOption": 0,
     "explanation": "PET infers tracer distribution from detected photon pairs."
   },
   {
@@ -1237,12 +2357,12 @@
     "difficulty": "introductory",
     "question": "What does EEG record?",
     "options": [
-      "Voltage differences associated with brain electrical activity",
+      "Magnetic fields generated by blood flow",
       "Only skull thickness",
-      "Only tissue temperature",
-      "Only fluorescent protein concentration"
+      "Voltage differences associated with brain electrical activity",
+      "Only tissue temperature"
     ],
-    "correctOption": 0,
+    "correctOption": 2,
     "explanation": "Scalp electrodes measure electrical potential differences related to brain activity."
   },
   {
@@ -1253,7 +2373,7 @@
     "options": [
       "Only image file size",
       "Activity or physiological processes",
-      "Only anatomical shape",
+      "Only the position of anatomical boundaries",
       "Only the scanner brand"
     ],
     "correctOption": 1,
@@ -1265,12 +2385,12 @@
     "difficulty": "introductory",
     "question": "How does CT collect information from different directions?",
     "options": [
-      "It measures a blood drop only",
       "It replaces all X-rays with ultrasound",
-      "It acquires multiple X-ray projections around the object",
-      "It uses one visible-light photo"
+      "It collects ultrasound echoes from multiple angles",
+      "It measures a blood drop only",
+      "It acquires multiple X-ray projections around the object"
     ],
-    "correctOption": 2,
+    "correctOption": 3,
     "explanation": "A reconstruction algorithm combines projections to estimate internal attenuation."
   },
   {
@@ -1281,10 +2401,10 @@
     "options": [
       "Only measuring reaction time",
       "Only measuring enzyme activity in a well",
-      "Always sorting cells",
-      "Showing structure and location of body parts"
+      "Showing structure and location of body parts",
+      "Showing metabolic activity without anatomical structure"
     ],
-    "correctOption": 3,
+    "correctOption": 2,
     "explanation": "Anatomical images describe structure, while functional imaging emphasizes physiological processes."
   },
   {
@@ -1293,12 +2413,12 @@
     "difficulty": "application",
     "question": "Why is depth difficult to interpret in a single X-ray projection?",
     "options": [
-      "Structures at different depths overlap",
       "X-rays cannot pass through any tissue",
       "The detector records temperature only",
-      "Projection images contain no information"
+      "The X-rays are reflected at the body surface",
+      "Structures at different depths overlap"
     ],
-    "correctOption": 0,
+    "correctOption": 3,
     "explanation": "A projection combines attenuation along each ray path."
   },
   {
@@ -1307,12 +2427,12 @@
     "difficulty": "application",
     "question": "What produces an ultrasound echo at a tissue boundary?",
     "options": [
-      "Radioactive decay in every case",
       "A difference in acoustic properties",
+      "A fluorescent antibody",
       "Only a difference in visible color",
-      "A fluorescent antibody"
+      "A difference in optical refractive index"
     ],
-    "correctOption": 1,
+    "correctOption": 0,
     "explanation": "Differences in acoustic impedance cause partial reflection of sound."
   },
   {
@@ -1321,12 +2441,12 @@
     "difficulty": "application",
     "question": "Why combine PET and CT?",
     "options": [
+      "To eliminate the need for a radiotracer",
       "To turn sound into light",
-      "To make both measure the same property",
-      "To relate tracer distribution to anatomical location",
-      "To remove all radiation exposure"
+      "To remove all radiation exposure",
+      "To relate tracer distribution to anatomical location"
     ],
-    "correctOption": 2,
+    "correctOption": 3,
     "explanation": "PET and CT supply complementary functional and anatomical information."
   },
   {
@@ -1335,12 +2455,12 @@
     "difficulty": "application",
     "question": "Optical brain imaging tracks oxy- and deoxyhemoglobin changes. What does it primarily measure?",
     "options": [
+      "Blood oxygenation changes indirectly linked to activity",
       "Every neuron's voltage directly",
-      "Only skull color",
-      "Only radioactive decay",
-      "Blood oxygenation changes indirectly linked to activity"
+      "Electrical spikes from individual neurons",
+      "Only skull color"
     ],
-    "correctOption": 3,
+    "correctOption": 0,
     "explanation": "Hemoglobin absorption supplies a hemodynamic rather than a direct electrical marker."
   },
   {
@@ -1351,7 +2471,7 @@
     "options": [
       "Changes related to blood oxygenation",
       "Direct fluorescence from all neurons",
-      "Only X-ray absorption",
+      "Direct firing rates of individual neurons",
       "Sound reflected by the skull"
     ],
     "correctOption": 0,
@@ -1363,12 +2483,12 @@
     "difficulty": "application",
     "question": "Why can optical imaging of thick scattering tissue need reconstruction?",
     "options": [
-      "A model removes all uncertainty",
-      "Scattering complicates the link between internal sources and measured light",
       "No light can ever leave tissue",
-      "All photons become sound"
+      "Because scattering is absent in thick tissue",
+      "Scattering complicates the link between internal sources and measured light",
+      "A model removes all uncertainty"
     ],
-    "correctOption": 1,
+    "correctOption": 2,
     "explanation": "A light-propagation model helps infer internal properties from mixed measurements."
   },
   {
@@ -1377,12 +2497,12 @@
     "difficulty": "challenge",
     "question": "What do we estimate in an inverse imaging problem?",
     "options": [
-      "Monitor brand from image color",
-      "An exact answer without data",
       "Internal properties from measured signals",
-      "Only signals from already-known properties"
+      "Only signals from already-known properties",
+      "External illumination intensity from measured signals",
+      "Monitor brand from image color"
     ],
-    "correctOption": 2,
+    "correctOption": 0,
     "explanation": "The forward problem predicts measurements; the inverse problem estimates their causes."
   },
   {
@@ -1391,13 +2511,293 @@
     "difficulty": "challenge",
     "question": "Must bright regions in two different modalities represent the same property?",
     "options": [
-      "Yes; brightness always means higher density",
+      "No; interpretation depends on each contrast mechanism",
+      "Yes; brighter pixels always indicate greater tissue density",
       "Yes; brightness always means calcium",
-      "Yes; brightness always proves disease",
-      "No; interpretation depends on each contrast mechanism"
+      "Yes; brightness always proves disease"
+    ],
+    "correctOption": 0,
+    "explanation": "Brightness depends on modality, acquisition, contrast, and display choices."
+  },
+  {
+    "id": "bodyimaging-21",
+    "category": "bodyimaging",
+    "difficulty": "introductory",
+    "question": "Which technique uses reflected sound to make a medical image?",
+    "options": [
+      "PET",
+      "Ultrasound",
+      "X-ray CT",
+      "MRI"
+    ],
+    "correctOption": 1,
+    "explanation": "Ultrasound scanners detect echoes from tissue boundaries."
+  },
+  {
+    "id": "bodyimaging-22",
+    "category": "bodyimaging",
+    "difficulty": "introductory",
+    "question": "Which modality is especially associated with a large static magnet?",
+    "options": [
+      "ELISA",
+      "CT",
+      "MRI",
+      "Optical microscopy"
+    ],
+    "correctOption": 2,
+    "explanation": "MRI scanners use strong magnetic fields and radiofrequency signals."
+  },
+  {
+    "id": "bodyimaging-23",
+    "category": "bodyimaging",
+    "difficulty": "introductory",
+    "question": "Which modality is usually used to view a broken bone with a quick projection?",
+    "options": [
+      "ELISA",
+      "PET",
+      "EEG",
+      "X-ray radiography"
     ],
     "correctOption": 3,
-    "explanation": "Brightness depends on modality, acquisition, contrast, and display choices."
+    "explanation": "Bones strongly attenuate X-rays, producing clear contrast in a radiograph."
+  },
+  {
+    "id": "bodyimaging-24",
+    "category": "bodyimaging",
+    "difficulty": "introductory",
+    "question": "What is a clinical image slice?",
+    "options": [
+      "A unit of radiation dose",
+      "A broken camera sensor",
+      "A cross-sectional view through the body",
+      "A projection image through the entire body"
+    ],
+    "correctOption": 2,
+    "explanation": "Tomographic methods represent internal sections at chosen positions."
+  },
+  {
+    "id": "bodyimaging-25",
+    "category": "bodyimaging",
+    "difficulty": "introductory",
+    "question": "Which technique can use a radiotracer to map a process in the body?",
+    "options": [
+      "PET",
+      "MRI",
+      "Ultrasound",
+      "Bright-field microscopy"
+    ],
+    "correctOption": 0,
+    "explanation": "PET detects radiation from a administered positron-emitting tracer."
+  },
+  {
+    "id": "bodyimaging-26",
+    "category": "bodyimaging",
+    "difficulty": "introductory",
+    "question": "What is an axial medical image?",
+    "options": [
+      "A plot of antibody concentration",
+      "A view only of the skin surface",
+      "A plane parallel to the body’s long axis",
+      "A cross-section across the body roughly perpendicular to its long axis"
+    ],
+    "correctOption": 3,
+    "explanation": "Axial slices conventionally divide the body into superior and inferior parts."
+  },
+  {
+    "id": "bodyimaging-27",
+    "category": "bodyimaging",
+    "difficulty": "introductory",
+    "question": "Which modality does not use ionizing radiation in a standard scan?",
+    "options": [
+      "MRI",
+      "Conventional radiography",
+      "PET",
+      "X-ray CT"
+    ],
+    "correctOption": 0,
+    "explanation": "MRI uses magnetic fields and radio waves rather than ionizing X-rays or radioactive tracers."
+  },
+  {
+    "id": "bodyimaging-28",
+    "category": "bodyimaging",
+    "difficulty": "introductory",
+    "question": "Which modality can image a moving fetus using sound?",
+    "options": [
+      "EEG",
+      "ELISA",
+      "Ultrasound",
+      "X-ray radiography"
+    ],
+    "correctOption": 2,
+    "explanation": "Ultrasound provides real-time images from reflected acoustic waves."
+  },
+  {
+    "id": "bodyimaging-29",
+    "category": "bodyimaging",
+    "difficulty": "introductory",
+    "question": "What is a radiotracer?",
+    "options": [
+      "A detectable radioactive substance used to follow a process",
+      "A fluorescent dye without any radioactive component",
+      "An image pixel",
+      "A microscope objective"
+    ],
+    "correctOption": 0,
+    "explanation": "Radiotracers make their distribution detectable in nuclear medicine."
+  },
+  {
+    "id": "bodyimaging-30",
+    "category": "bodyimaging",
+    "difficulty": "introductory",
+    "question": "What can a CT image show that a single chest radiograph often cannot separate?",
+    "options": [
+      "The patient's full genome",
+      "Structures at different depths",
+      "Every antibody in blood",
+      "The exact position of every atom"
+    ],
+    "correctOption": 1,
+    "explanation": "Tomography estimates cross-sections rather than superimposing all depths."
+  },
+  {
+    "id": "bodyimaging-31",
+    "category": "bodyimaging",
+    "difficulty": "introductory",
+    "question": "Which physical quantity is involved in MRI's common signal?",
+    "options": [
+      "Electrons moving in a magnetic field",
+      "Hydrogen nuclei in a magnetic field",
+      "Only acoustic pressure",
+      "Only antigen binding"
+    ],
+    "correctOption": 1,
+    "explanation": "MRI frequently uses signals from hydrogen nuclei in water and fat."
+  },
+  {
+    "id": "bodyimaging-32",
+    "category": "bodyimaging",
+    "difficulty": "introductory",
+    "question": "Why are there multiple medical imaging techniques?",
+    "options": [
+      "The display color determines all physics",
+      "All modalities measure the same tissue property",
+      "Every scanner gives identical information",
+      "Each measures different properties and has different strengths"
+    ],
+    "correctOption": 3,
+    "explanation": "Choice depends on the tissue, question, contrast, safety, and practical constraints."
+  },
+  {
+    "id": "bodyimaging-33",
+    "category": "bodyimaging",
+    "difficulty": "application",
+    "question": "A clinician wants to see soft tissue without ionizing radiation. Which modality is often appropriate?",
+    "options": [
+      "Conventional X-ray alone in every case",
+      "PET in every case",
+      "CT",
+      "MRI"
+    ],
+    "correctOption": 3,
+    "explanation": "MRI often gives excellent soft-tissue contrast without using ionizing radiation."
+  },
+  {
+    "id": "bodyimaging-34",
+    "category": "bodyimaging",
+    "difficulty": "application",
+    "question": "A simple radiograph shows two overlapping ribs. Why might CT separate them more clearly?",
+    "options": [
+      "CT displays every tissue as one identical value",
+      "CT removes the ribs physically",
+      "Because CT uses a single projection with higher exposure",
+      "CT reconstructs internal slices from multiple directions"
+    ],
+    "correctOption": 3,
+    "explanation": "Projection overlap is reduced by reconstructing cross-sectional information."
+  },
+  {
+    "id": "bodyimaging-35",
+    "category": "bodyimaging",
+    "difficulty": "application",
+    "question": "Why might an ultrasound image vary when the probe angle changes?",
+    "options": [
+      "The detector stops using time",
+      "All sound becomes visible light",
+      "The direction and strength of returning echoes change",
+      "Because ultrasound echoes are independent of probe angle"
+    ],
+    "correctOption": 2,
+    "explanation": "Echo detection depends on geometry and tissue interfaces."
+  },
+  {
+    "id": "bodyimaging-36",
+    "category": "bodyimaging",
+    "difficulty": "application",
+    "question": "A PET hotspot and CT bone boundary are displayed together. What does the combination help identify?",
+    "options": [
+      "Where tracer uptake lies relative to anatomy",
+      "That no reconstruction was performed",
+      "The total number of bones regardless of location",
+      "That tracer concentration equals bone density"
+    ],
+    "correctOption": 0,
+    "explanation": "Combining modalities helps localize a functional signal within anatomical structures."
+  },
+  {
+    "id": "bodyimaging-37",
+    "category": "bodyimaging",
+    "difficulty": "application",
+    "question": "In optical brain imaging, why is hemoglobin useful as a signal source?",
+    "options": [
+      "Its fluorescence is independent of oxygenation",
+      "It directly records each neuron's voltage",
+      "It is a microscope lens",
+      "Its absorption changes with wavelength and oxygenation"
+    ],
+    "correctOption": 3,
+    "explanation": "Optical methods exploit hemoglobin absorption as an indirect measure of hemodynamics."
+  },
+  {
+    "id": "bodyimaging-38",
+    "category": "bodyimaging",
+    "difficulty": "application",
+    "question": "Why should a bright spot in a medical image be interpreted cautiously?",
+    "options": [
+      "Bright areas always represent the same pathology",
+      "Display settings and the modality's contrast mechanism affect brightness",
+      "Every bright spot is identical across modalities",
+      "Brightness always means bone"
+    ],
+    "correctOption": 1,
+    "explanation": "A bright pixel's meaning depends on acquisition and display, not color alone."
+  },
+  {
+    "id": "bodyimaging-39",
+    "category": "bodyimaging",
+    "difficulty": "challenge",
+    "question": "Two CT projections are taken from different directions. What extra information can combining them provide?",
+    "options": [
+      "The exact optical wavelength of skin",
+      "Clues about depth and internal location",
+      "Only the scanner's brand",
+      "Only the total X-ray dose"
+    ],
+    "correctOption": 1,
+    "explanation": "Different viewing directions help separate structures that overlap in one projection."
+  },
+  {
+    "id": "bodyimaging-40",
+    "category": "bodyimaging",
+    "difficulty": "challenge",
+    "question": "A method detects changes in blood oxygenation during a task. Does that directly measure individual neuron spikes?",
+    "options": [
+      "Yes, oxygen is an electrical current",
+      "No, it measures only bone thickness",
+      "Yes; each change corresponds to one neuronal action potential",
+      "No, it is an indirect physiological indicator"
+    ],
+    "correctOption": 3,
+    "explanation": "Hemodynamic signals are related to activity but do not directly record single-neuron firing."
   },
   {
     "id": "assays-1",
@@ -1405,12 +2805,12 @@
     "difficulty": "introductory",
     "question": "What role does an antibody serve in an assay?",
     "options": [
-      "Recognizing a particular target",
       "Generating a magnetic field",
+      "Recognizing a particular target",
       "Focusing a lens",
-      "Measuring time alone"
+      "Producing the color signal without binding any target"
     ],
-    "correctOption": 0,
+    "correctOption": 1,
     "explanation": "Antibodies provide recognition of particular molecular features."
   },
   {
@@ -1419,12 +2819,12 @@
     "difficulty": "introductory",
     "question": "In an antibody assay, what is the antigen?",
     "options": [
-      "An image pixel",
       "A target recognized by an antibody",
-      "The light source",
-      "The sample holder"
+      "An enzyme that generates the assay color",
+      "The sample holder",
+      "An image pixel"
     ],
-    "correctOption": 1,
+    "correctOption": 0,
     "explanation": "Antibody-antigen recognition helps make a molecular assay selective."
   },
   {
@@ -1433,12 +2833,12 @@
     "difficulty": "introductory",
     "question": "What creates the colored product in a colorimetric ELISA?",
     "options": [
-      "A magnet sorting molecules",
-      "A microscope objective",
+      "The antigen itself changing color without enzyme action",
       "An enzyme acting on its substrate",
+      "A magnet sorting molecules",
       "A camera enlarging the sample"
     ],
-    "correctOption": 2,
+    "correctOption": 1,
     "explanation": "The enzyme label converts substrate into a detectable colored product."
   },
   {
@@ -1447,12 +2847,12 @@
     "difficulty": "introductory",
     "question": "Why use an ELISA calibration curve?",
     "options": [
-      "To choose team colors",
-      "To change antibody identity",
+      "To relate measured signals to known concentrations",
+      "To determine the physical size of each antibody",
       "To count screen pixels",
-      "To relate measured signals to known concentrations"
+      "To choose team colors"
     ],
-    "correctOption": 3,
+    "correctOption": 0,
     "explanation": "Known standards establish a signal-concentration relationship."
   },
   {
@@ -1461,12 +2861,12 @@
     "difficulty": "introductory",
     "question": "Why wash between ELISA steps?",
     "options": [
+      "To increase the amount of bound target",
       "To remove unbound reagents that can cause background",
-      "To enlarge every molecule",
       "To turn antibodies into enzymes",
-      "To guarantee unlimited sensitivity"
+      "To enlarge every molecule"
     ],
-    "correctOption": 0,
+    "correctOption": 1,
     "explanation": "Unbound labels can generate signal unrelated to specifically bound target."
   },
   {
@@ -1475,12 +2875,12 @@
     "difficulty": "introductory",
     "question": "Why block an ELISA plate?",
     "options": [
-      "To make wells radioactive",
       "To reduce nonspecific binding to available surfaces",
       "To prevent every antigen-antibody interaction",
+      "To promote nonspecific adsorption of detection antibodies",
       "To stop all light reaching the reader"
     ],
-    "correctOption": 1,
+    "correctOption": 0,
     "explanation": "Blocking occupies unwanted surface binding sites and reduces background."
   },
   {
@@ -1490,11 +2890,11 @@
     "question": "What does flow cytometry typically analyze?",
     "options": [
       "Only a stationary tissue photograph",
-      "Only a person's average mass",
       "Individual cells or particles passing a detection region",
-      "Only whole-body slices"
+      "Only whole-body slices",
+      "Only the average properties of the whole sample"
     ],
-    "correctOption": 2,
+    "correctOption": 1,
     "explanation": "Signals are recorded from individual events passing the interrogation region."
   },
   {
@@ -1504,7 +2904,7 @@
     "question": "What extra capability does cell sorting provide?",
     "options": [
       "Only brighter displays",
-      "Conversion of every cell to one type",
+      "More precise fluorescence measurement without separating cells",
       "Removal of the need for measurements",
       "Physical separation of selected cells"
     ],
@@ -1518,9 +2918,9 @@
     "question": "What does FACS stand for?",
     "options": [
       "Fluorescence-activated cell sorting",
+      "Fluorescence-assisted cell staining",
       "Frequency-adjusted camera sampling",
-      "Fast absorption color scanning",
-      "Field-aligned cell staining"
+      "Fast absorption color scanning"
     ],
     "correctOption": 0,
     "explanation": "FACS uses optical measurements to select and physically sort cells."
@@ -1531,12 +2931,12 @@
     "difficulty": "introductory",
     "question": "Why use fluorescent antibodies before flow cytometry?",
     "options": [
-      "To replace the laser",
       "To detect cells carrying a chosen marker",
-      "To make every cell neutral",
+      "To make all cells emit the same intensity",
+      "To replace the laser",
       "To eliminate all scattering"
     ],
-    "correctOption": 1,
+    "correctOption": 0,
     "explanation": "Antibodies supply recognition and fluorophores provide a measurable optical signal."
   },
   {
@@ -1545,7 +2945,7 @@
     "difficulty": "introductory",
     "question": "What excites fluorescent labels in a typical flow cytometer?",
     "options": [
-      "A loudspeaker",
+      "The emitted fluorescence itself",
       "A weighing balance",
       "A laser",
       "An X-ray tube"
@@ -1559,12 +2959,12 @@
     "difficulty": "introductory",
     "question": "Why include a negative control?",
     "options": [
-      "To guarantee a positive result",
-      "To replace every sample",
+      "To estimate background or nonspecific signal",
+      "To ensure the positive sample always reads zero",
       "To avoid calibration",
-      "To estimate background or nonspecific signal"
+      "To guarantee a positive result"
     ],
-    "correctOption": 3,
+    "correctOption": 0,
     "explanation": "Controls help distinguish target-related signal from background."
   },
   {
@@ -1573,27 +2973,27 @@
     "difficulty": "application",
     "question": "In indirect ELISA, what does the labeled secondary antibody recognize?",
     "options": [
-      "The primary antibody",
-      "Only the plastic plate by design",
       "The enzyme substrate",
-      "The illumination lamp"
+      "The illumination lamp",
+      "The primary antibody",
+      "The target antigen"
     ],
-    "correctOption": 0,
+    "correctOption": 2,
     "explanation": "The primary recognizes antigen; the secondary recognizes the primary antibody."
   },
   {
     "id": "assays-14",
     "category": "assays",
     "difficulty": "application",
-    "question": "Within the increasing calibrated range of direct colorimetric ELISA, a stronger signal usually suggests what?",
+    "question": "In a conventional noncompetitive direct colorimetric ELISA, within its validated increasing calibration range and under matched conditions, what does a stronger signal usually indicate?",
     "options": [
-      "More image pixels",
       "More target antigen",
+      "Higher microscope magnification",
       "Fewer target molecules automatically",
-      "Higher microscope magnification"
+      "Less target antigen because signal is inversely proportional in every ELISA"
     ],
-    "correctOption": 1,
-    "explanation": "In this format and under matched conditions, signal increases with target amount within the validated range."
+    "correctOption": 0,
+    "explanation": "In this assay format, signal generally increases with target antigen amount within the validated calibration range."
   },
   {
     "id": "assays-15",
@@ -1601,12 +3001,12 @@
     "difficulty": "application",
     "question": "Why guide cells into a narrow stream in a cytometer?",
     "options": [
-      "To destroy all antibodies",
-      "To replace fluorescence with X-rays",
       "To measure individual cells consistently",
-      "To give every cell the same fluorescence"
+      "To replace fluorescence with X-rays",
+      "To increase the size of the cells before detection",
+      "To destroy all antibodies"
     ],
-    "correctOption": 2,
+    "correctOption": 0,
     "explanation": "Fluidic focusing helps cells pass through the interrogation region reproducibly."
   },
   {
@@ -1615,9 +3015,9 @@
     "difficulty": "application",
     "question": "Two cell populations differ in marker-channel fluorescence. What may this indicate?",
     "options": [
-      "Necessarily different DNA sequences",
-      "Brighter cells must be larger",
       "Dimmer cells must all be dead",
+      "Brighter cells must be larger",
+      "Different cell sizes with identical marker abundance",
       "Different abundance of the labeled marker"
     ],
     "correctOption": 3,
@@ -1629,12 +3029,12 @@
     "difficulty": "application",
     "question": "An ELISA sample exceeds the highest calibrated standard. What is a sensible next step?",
     "options": [
-      "Dilute and remeasure within the validated range",
       "Guess an exact concentration",
-      "Assume no target is present",
-      "Ignore the standards"
+      "Dilute and remeasure within the validated range",
+      "Ignore the standards",
+      "Extrapolate directly beyond the top standard"
     ],
-    "correctOption": 0,
+    "correctOption": 1,
     "explanation": "Account for dilution when calculating original concentration; out-of-range measurements are unreliable."
   },
   {
@@ -1643,10 +3043,10 @@
     "difficulty": "application",
     "question": "How can a droplet-based sorter direct selected droplets to collectors?",
     "options": [
-      "Assuming every droplet is naturally magnetic",
+      "Converting cells into photons",
       "Charging droplets and deflecting them electrically",
-      "Changing monitor size",
-      "Converting cells into photons"
+      "By changing the fluorescence wavelength of each cell",
+      "Changing monitor size"
     ],
     "correctOption": 1,
     "explanation": "Selected droplets can receive charge and be deflected by an electric field."
@@ -1657,12 +3057,12 @@
     "difficulty": "challenge",
     "question": "A tenfold-diluted sample measures 3 ng/mL. What was the original concentration?",
     "options": [
-      "3 ng/mL",
-      "300 ng/mL",
+      "0.3 ng/mL",
       "30 ng/mL",
-      "0.3 ng/mL"
+      "300 ng/mL",
+      "3 ng/mL"
     ],
-    "correctOption": 2,
+    "correctOption": 1,
     "explanation": "Original concentration = measured concentration x dilution factor = 3 x 10."
   },
   {
@@ -1671,12 +3071,292 @@
     "difficulty": "challenge",
     "question": "Why is forward scatter not an exact cell-diameter ruler for every sample?",
     "options": [
+      "It also depends on optical properties and measurement geometry",
+      "Forward scatter measures diameter independently of refractive index",
       "It measures only antibody binding",
-      "It is completely unrelated to cells",
-      "It always equals fluorescence",
-      "It also depends on optical properties and measurement geometry"
+      "It is completely unrelated to cells"
+    ],
+    "correctOption": 0,
+    "explanation": "Forward scatter often correlates with size, but shape, refractive properties, and instrument conditions matter too."
+  },
+  {
+    "id": "assays-21",
+    "category": "assays",
+    "difficulty": "introductory",
+    "question": "What type of molecule can an antibody help detect in an ELISA?",
+    "options": [
+      "Only the plate's plastic",
+      "Only a magnetic field",
+      "Any molecule present in the well, regardless of antibody specificity",
+      "A specific target antigen"
     ],
     "correctOption": 3,
-    "explanation": "Forward scatter often correlates with size, but shape, refractive properties, and instrument conditions matter too."
+    "explanation": "Antibody binding gives an assay selectivity for its antigen."
+  },
+  {
+    "id": "assays-22",
+    "category": "assays",
+    "difficulty": "introductory",
+    "question": "In an ELISA plate, what is a well?",
+    "options": [
+      "A cell nucleus",
+      "A type of microscope objective",
+      "A detector that reads fluorescence",
+      "A small chamber that holds sample and reagents"
+    ],
+    "correctOption": 3,
+    "explanation": "Wells keep individual reactions and samples separated."
+  },
+  {
+    "id": "assays-23",
+    "category": "assays",
+    "difficulty": "introductory",
+    "question": "What does the ELISA reader typically measure in a colorimetric assay?",
+    "options": [
+      "Electrical activity from a brain",
+      "The amount of light scattered by intact cells",
+      "Ultrasound echoes",
+      "Light absorption by the reaction product"
+    ],
+    "correctOption": 3,
+    "explanation": "The amount of colored product is measured optically, often by absorbance."
+  },
+  {
+    "id": "assays-24",
+    "category": "assays",
+    "difficulty": "introductory",
+    "question": "What is a positive control useful for?",
+    "options": [
+      "Checking that a test can detect a known positive sample",
+      "Measuring the target concentration in every unknown sample",
+      "Replacing the entire calibration curve",
+      "Making every unknown sample positive"
+    ],
+    "correctOption": 0,
+    "explanation": "A known positive helps reveal failures in reagents or procedure."
+  },
+  {
+    "id": "assays-25",
+    "category": "assays",
+    "difficulty": "introductory",
+    "question": "What carries the enzyme label in a direct ELISA?",
+    "options": [
+      "A labeled secondary antibody",
+      "The antigen-binding antibody",
+      "The light source",
+      "The plastic pipette"
+    ],
+    "correctOption": 1,
+    "explanation": "Direct ELISA uses an enzyme-linked antibody that recognizes the antigen."
+  },
+  {
+    "id": "assays-26",
+    "category": "assays",
+    "difficulty": "introductory",
+    "question": "What does the secondary antibody recognize in an indirect ELISA?",
+    "options": [
+      "The primary antibody",
+      "Only a color filter",
+      "The camera sensor",
+      "The antigen itself"
+    ],
+    "correctOption": 0,
+    "explanation": "Secondary antibody binds primary antibody and carries the detectable label."
+  },
+  {
+    "id": "assays-27",
+    "category": "assays",
+    "difficulty": "introductory",
+    "question": "What is a standard sample in a calibration curve?",
+    "options": [
+      "A microscope slide only",
+      "A sample with an unknown concentration",
+      "A random unknown patient result",
+      "A sample with known target concentration"
+    ],
+    "correctOption": 3,
+    "explanation": "Known standards establish the relationship between concentration and signal."
+  },
+  {
+    "id": "assays-28",
+    "category": "assays",
+    "difficulty": "introductory",
+    "question": "What is the flow cytometer's fluidics system used for?",
+    "options": [
+      "Transporting cells through the measurement region",
+      "Producing X-rays",
+      "Increasing antibody binding to the plate",
+      "Measuring lens magnification"
+    ],
+    "correctOption": 0,
+    "explanation": "Fluidics move cells through the optical interrogation point."
+  },
+  {
+    "id": "assays-29",
+    "category": "assays",
+    "difficulty": "introductory",
+    "question": "What does a fluorescence detector in flow cytometry record?",
+    "options": [
+      "The amount of excitation laser light absorbed by the sample",
+      "Light emitted by excited labels on passing cells",
+      "Only the patient's pulse",
+      "Only the weight of each cell"
+    ],
+    "correctOption": 1,
+    "explanation": "A detector collects fluorescence from labels excited as cells pass the laser."
+  },
+  {
+    "id": "assays-30",
+    "category": "assays",
+    "difficulty": "introductory",
+    "question": "What can FACS collect in separate tubes?",
+    "options": [
+      "All cells passing through the cytometer regardless of marker",
+      "Every photon from the sun",
+      "Only antibodies without cells",
+      "Selected cell populations"
+    ],
+    "correctOption": 3,
+    "explanation": "A sorter physically directs different measured cell populations to collection tubes."
+  },
+  {
+    "id": "assays-31",
+    "category": "assays",
+    "difficulty": "introductory",
+    "question": "What is a cell marker in a FACS experiment?",
+    "options": [
+      "A molecule used to identify a cell population",
+      "The laser used to excite a sample",
+      "The number of screen pixels",
+      "Only the sample container"
+    ],
+    "correctOption": 0,
+    "explanation": "Labeled antibodies can detect markers on or in cells."
+  },
+  {
+    "id": "assays-32",
+    "category": "assays",
+    "difficulty": "introductory",
+    "question": "Why might a blank well be included in an ELISA plate?",
+    "options": [
+      "To measure ultrasound",
+      "To determine the concentration of the positive control",
+      "To estimate background signal from reagents and plate",
+      "To replace the enzyme"
+    ],
+    "correctOption": 2,
+    "explanation": "A blank provides a background baseline under the chosen conditions."
+  },
+  {
+    "id": "assays-33",
+    "category": "assays",
+    "difficulty": "application",
+    "question": "Two standard solutions produce different ELISA color intensities. What can their known concentrations help determine?",
+    "options": [
+      "The molecular mass of the antibody from its color",
+      "The patient's genome",
+      "A signal-concentration relationship",
+      "The number of cell types in tissue"
+    ],
+    "correctOption": 2,
+    "explanation": "Standards make it possible to infer unknown concentration within a validated range."
+  },
+  {
+    "id": "assays-34",
+    "category": "assays",
+    "difficulty": "application",
+    "question": "Why should a sample with no target ideally give little color in a direct ELISA?",
+    "options": [
+      "The enzyme turns into a cell",
+      "No target always produces the strongest color signal",
+      "No washing is needed",
+      "Specific labeled antibody should bind little or not at all"
+    ],
+    "correctOption": 3,
+    "explanation": "Low nonspecific binding and effective washing reduce false positive signal."
+  },
+  {
+    "id": "assays-35",
+    "category": "assays",
+    "difficulty": "application",
+    "question": "A cytometer detects strong fluorescence in only a small subset of cells. What may this indicate?",
+    "options": [
+      "The brighter cells are necessarily cancerous",
+      "Only that subset carries much of the labeled marker",
+      "The rest of the cells have disappeared",
+      "All cells express the marker at the same level"
+    ],
+    "correctOption": 1,
+    "explanation": "Fluorescence identifies a population under the given labeling and control conditions."
+  },
+  {
+    "id": "assays-36",
+    "category": "assays",
+    "difficulty": "application",
+    "question": "Why are single-stained controls helpful when measuring multiple fluorescent labels?",
+    "options": [
+      "They eliminate every biological control",
+      "They help estimate spectral spillover between detection channels",
+      "They establish the absolute size of each cell",
+      "They increase cell size"
+    ],
+    "correctOption": 1,
+    "explanation": "Emission spectra can overlap; controls help separate contributions across channels."
+  },
+  {
+    "id": "assays-37",
+    "category": "assays",
+    "difficulty": "application",
+    "question": "An unknown ELISA well is the same color as a known standard, under matched conditions. What can you infer?",
+    "options": [
+      "Their target concentrations may be similar within the assay's usable range",
+      "Their concentrations must be exactly equal even outside the calibration range",
+      "Both have no antigen",
+      "Their sample volumes must differ"
+    ],
+    "correctOption": 0,
+    "explanation": "Comparing an unknown with standards estimates concentration only when the measurement is within the calibrated range."
+  },
+  {
+    "id": "assays-38",
+    "category": "assays",
+    "difficulty": "application",
+    "question": "Why should a sorter verify the purity of its collected cells?",
+    "options": [
+      "Sorting is imperfect and unwanted cells may enter a collected fraction",
+      "Purity reveals the laser wavelength exactly",
+      "Every collected tube is automatically pure",
+      "A sorter always produces a completely pure population"
+    ],
+    "correctOption": 0,
+    "explanation": "Reanalyzing a collected population checks how well the selection worked."
+  },
+  {
+    "id": "assays-39",
+    "category": "assays",
+    "difficulty": "challenge",
+    "question": "In the linear range of an ELISA calibration curve, a 2 ng/mL standard gives an absorbance of 0.20 and a 6 ng/mL standard gives 0.60, after blank subtraction. An unknown gives 0.40. What concentration is suggested?",
+    "options": [
+      "8 ng/mL",
+      "0.5 ng/mL",
+      "2 ng/mL",
+      "4 ng/mL"
+    ],
+    "correctOption": 3,
+    "explanation": "The signal is halfway between those of the two standards. With a linear calibration, the concentration is halfway between 2 and 6 ng/mL, or 4 ng/mL."
+  },
+  {
+    "id": "assays-40",
+    "category": "assays",
+    "difficulty": "challenge",
+    "question": "A labeled cell emits into two overlapping fluorescence channels. Why should both channels not be counted as two independent markers?",
+    "options": [
+      "One dye can spill into both detectors",
+      "Light can only enter one detector",
+      "Two detection channels always mean two distinct fluorescent markers",
+      "Both channels must be noise"
+    ],
+    "correctOption": 0,
+    "explanation": "Spectral overlap can create signal in more than one channel from a single fluorophore."
   }
 ]

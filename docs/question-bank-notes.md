@@ -1,7 +1,7 @@
 # Course question bank
 
-120 original English-language multiple-choice questions for first-year students.
-Each category contains 12 introductory concepts, 6 applications, and 2 challenges.
+240 original English-language multiple-choice questions for first-year students.
+Each category contains 24 introductory concepts, 12 applications, and 4 challenges.
 The aim is conceptual confidence, familiar examples, and short calculations, not
 memorization of equipment brands, historical dates, or advanced derivations.
 

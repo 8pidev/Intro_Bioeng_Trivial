@@ -1,5 +1,5 @@
 // Original course questions. Each row: question, correct choice, three distractors, explanation.
-// The first 12 in each category are introductory, the next 6 applications, the last 2 challenges.
+// Each 20-question block has 12 introductory, 6 application, and 2 challenge questions.
 const bank = {
   light: [
     ["Which visible light has the longer wavelength?", "Red", "Blue", "Violet", "All colors have equal wavelengths", "Red wavelengths are longer than blue and violet wavelengths."],
@@ -137,15 +137,21 @@ const bank = {
 
 const fs = require("node:fs");
 const path = require("node:path");
-const questions = Object.entries(bank).flatMap(([category, rows]) => rows.map((row, index) => {
+const extraBank = require("./extra-course-questions.cjs");
+const questions = Object.entries(bank).flatMap(([category, originalRows]) => {
+  if (originalRows.length !== 20 || extraBank[category]?.length !== 20) {
+    throw new Error(`Expected 20 original and 20 additional ${category} questions`);
+  }
+  return [...originalRows, ...extraBank[category]].map((row, index) => {
   const [question, correct, ...rest] = row;
   const explanation = rest.pop();
   const options = [correct, ...rest];
   const correctOption = index % 4;
   for (let n = 0; n < correctOption; n++) options.unshift(options.pop());
   return { id: `${category}-${index + 1}`, category,
-    difficulty: index < 12 ? "introductory" : index < 18 ? "application" : "challenge",
+    difficulty: index % 20 < 12 ? "introductory" : index % 20 < 18 ? "application" : "challenge",
     question, options, correctOption, explanation };
-}));
+  });
+});
 fs.writeFileSync(path.join(__dirname, "../questions.json"), JSON.stringify(questions, null, 2) + "\n");
 console.log(`Created ${questions.length} original course questions.`);

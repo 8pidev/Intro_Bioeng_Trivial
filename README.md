@@ -17,8 +17,8 @@ The six categories are:
 | bodyimaging | Seeing Inside the Body |
 | assays | Detecting Molecules & Sorting Cells |
 
-The bank contains 120 original questions: 20 per category, comprising 12
-introductory, 6 application, and 2 challenge questions. It follows the lecture
+The bank contains 240 original questions: 40 per category, comprising 24
+introductory, 12 application, and 4 challenge questions. It follows the lecture
 topics and uses the exam export as guidance on scope rather than copying exam
 questions. See docs/question-bank-notes.md for the topic mapping.
 
@@ -33,6 +33,10 @@ Classroom mode is the default. A typical schedule is 5 minutes for rules,
 - Each team gets one question per turn, whether correct or incorrect.
 - Roll-again spaces still allow another roll before a question.
 - At the hub, choose a category before seeing a question.
+- Each displayed question starts a 30-second countdown. Change Seconds/question
+  in the question header (5-300 seconds); the setting carries into later turns.
+- At zero the choices lock, the answer is revealed, and Continue awards no credit.
+  Retry same question restarts the timer; a new question starts a fresh timer.
 - Six wedges unlock a final challenge on that team's next move, anywhere.
 - A correct final answer wins immediately. A wrong answer passes the turn;
   the final can be attempted again on a later move.
@@ -41,9 +45,9 @@ Classroom mode is the default. A typical schedule is 5 minutes for rules,
 - Class results rank teams by wedges, then total correct answers.
   Exact ties share a place, including first place.
 
-Aim for about 30-45 seconds of team discussion, followed by a brief explanation.
+Aim for about 20-30 seconds of team discussion, followed by a brief explanation.
 Allow roughly 45-60 seconds per complete question turn. This supports around
-45-65 question turns in the playing window; the 120-question pool gives headroom.
+45-65 question turns in the playing window; the 240-question pool gives headroom.
 A natural six-wedge victory cannot be guaranteed within one hour: movement,
 accuracy, and discussion vary. End class & rank provides a planned finish.
 
@@ -54,19 +58,23 @@ answer, and requires a final correct answer at the hub after collecting six wedg
 ## Questions and teacher controls
 
 Each question displays four shuffled answer choices. Click the team's choice
-to lock it, highlight the correct answer, and show the explanation. The teacher
-then confirms Correct or Incorrect; these remain judgment overrides.
-Reveal correct answer is also available without choosing an option.
-Another question is the only way to replace a question after category selection;
-it stays within the chosen category. A question is marked used when it appears,
+to lock it, highlight the correct answer, and show the explanation. Continue
+scores that choice automatically and advances the game. Reveal correct answer
+without choosing an option, then Continue, awards no credit.
+Retry same question clears the selected answer so the team can answer it again.
+New unused question draws a fresh question from the same category, and Change
+question opens the category chooser. A question is marked used when it appears,
 and cannot reappear anywhere in the same game, even after Undo, refresh, or a
-new import. When a category runs out, choose another unused category or skip
+new import. Only an explicit Retry same question shows the same question again.
+When a category runs out, choose another unused category or skip
 the turn. Reset starts a new game and clears the question history.
 
 Manual movement, manual wedge adjustments, undo, reset, full screen, and
 automatic browser saving remain available. Game progress uses a new course-specific
 save key so the old generic game's categories cannot contaminate this version.
 Correct-answer totals include a successful final challenge.
+Rolling the die turns off Move anywhere, so only spaces at the rolled distance
+can be selected. A six from the center reaches the six category headquarters.
 
 Keyboard controls: Space = roll, A = reveal, N = next team, U = undo, F = full screen.
 
@@ -94,6 +102,9 @@ metadata, not a visible clue or a guarantee about the next question.
 Use Import questions to select an edited JSON file. The replacement must cover
 all six category IDs and is saved in this browser across refreshes.
 Reset clears the game and question history but keeps the imported question bank.
+If this browser imported the previous bundled 120-question bank, the game
+automatically upgrades it to the 240-question default. Custom imports remain
+unchanged.
 
 To make edits the default in a copied folder without importing, run:
 
@@ -104,7 +115,7 @@ node scripts/build-question-bank.cjs
 This rebuilds questions-data.js, the offline browser copy of questions.json.
 Commit both files to keep the default bank synchronized. Students using the game
 do not need Node. The script scripts/create-course-bank.cjs records the original
-authored bank; rerunning it replaces questions.json with that original bank.
+authored bank; rerunning it replaces questions.json with the full 240-question bank.
 
 ## Verification
 
@@ -116,7 +127,7 @@ node scripts/check-browser.cjs
 
 The browser check requires Playwright and a browser. Set BROWSER_EXECUTABLE to an
 installed Chrome executable if the default Playwright browser is unavailable.
-The course check expects the distributed 120-question bank and its difficulty mix.
+The course check expects the distributed 240-question bank and its difficulty mix.
 
 This project uses original visual styling and includes no official Trivial
 Pursuit artwork or logos. Teaching files in docs are reference material, not

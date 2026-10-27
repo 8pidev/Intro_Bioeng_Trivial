@@ -85,7 +85,14 @@
             <p class="question-team" id="question-team">Alpha</p>
             <h2 id="question-category">Category</h2>
           </div>
-          <span class="category-badge" id="question-badge"></span>
+          <div class="question-header-tools">
+            <div class="question-timer-controls">
+              <label for="question-seconds">Seconds/question</label>
+              <input id="question-seconds" type="number" min="5" max="300" step="1" value="30">
+              <output id="question-timer" aria-label="Question time remaining">00:30</output>
+            </div>
+            <span class="category-badge" id="question-badge"></span>
+          </div>
         </header>
         <div class="question-body">
           <div class="category-choice" id="category-choice" hidden>
@@ -93,6 +100,7 @@
             <div class="category-choice-buttons" id="category-choice-buttons"></div>
           </div>
           <p class="question-text" id="question-text"></p>
+          <p class="question-timer-status" id="question-timer-status" role="status" hidden>Time's up. No credit for this question.</p>
           <div class="answer-choices" id="answer-choices"></div>
           <div class="answer-panel" id="answer-panel" hidden>
             <p class="section-label">Explanation</p>
@@ -101,10 +109,11 @@
         </div>
         <footer class="question-actions">
           <button class="button button-secondary" id="skip-question" type="button" hidden>Skip turn</button>
-          <button class="button button-secondary" id="change-question" type="button">Another question</button>
+          <button class="button button-secondary" id="retry-question" type="button">Retry same question</button>
+          <button class="button button-secondary" id="ask-again" type="button">New unused question</button>
+          <button class="button button-secondary" id="change-question" type="button">Change question</button>
           <button class="button button-secondary" id="reveal-answer" type="button">Reveal correct answer</button>
-          <button class="button button-danger" id="incorrect-answer" type="button">Incorrect</button>
-          <button class="button button-success" id="correct-answer" type="button">Correct</button>
+          <button class="button button-success" id="continue-answer" type="button">Continue</button>
         </footer>
       </div>
     </dialog>

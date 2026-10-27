@@ -31,7 +31,16 @@ const winnerDialog = document.querySelector("#winner-dialog");
 let questions = [...DEFAULT_QUESTIONS];
 try {
   const savedBank = JSON.parse(localStorage.getItem(BANK_KEY));
-  if (Array.isArray(savedBank) && savedBank.length && savedBank.every(isValidQuestion)) questions = savedBank;
+  if (Array.isArray(savedBank) && savedBank.length && savedBank.every(isValidQuestion)) {
+    const oldBundledBank = savedBank.length === 120 && savedBank.every((item, index) => {
+      const bundled = DEFAULT_QUESTIONS.find(question => question.id === item.id);
+      return bundled && item.category === bundled.category && item.question === bundled.question &&
+        item.correctOption === bundled.correctOption &&
+        JSON.stringify(item.options) === JSON.stringify(bundled.options);
+    });
+    if (oldBundledBank) localStorage.removeItem(BANK_KEY);
+    else questions = savedBank;
+  }
 } catch (error) { console.warn("Could not restore imported questions", error); }
 let nodeMap = new Map();
 let adjacency = new Map();
@@ -41,6 +50,8 @@ let currentQuestion = null;
 let currentCategoryIndex = null;
 let selectedOption = null;
 let answerRevealed = false;
+let questionDeadline = null;
+let questionExpired = false;
 let finalChallenge = false;
 let undoStack = [];
 let toastTimer;
@@ -52,6 +63,7 @@ function initialState() {
     rolled: null,
     phase: "roll",
     mode: "classroom",
+    questionSeconds: 30,
     finishReason: null,
     clock: { elapsed: 0, startedAt: null },
     seenQuestionKeys: [],
@@ -82,6 +94,8 @@ function loadState() {
       }
       const restored = { ...initialState(), ...stored, seenQuestionKeys: [...seenQuestionKeys],
         rolled: null, phase: stored.winner === null || stored.winner === undefined ? "roll" : "won" };
+      restored.questionSeconds = Number.isInteger(stored.questionSeconds) && stored.questionSeconds >= 5 && stored.questionSeconds <= 300
+        ? stored.questionSeconds : 30;
       delete restored.usedQuestions;
       return restored;
     }
@@ -188,11 +202,19 @@ function renderNode(node) {
 
 function renderLegend() {
   const legend = document.querySelector("#board-legend");
-  legend.replaceChildren(...CATEGORIES.map(category => {
-    const item = document.createElement("div");
-    item.className = "legend-item";
-    item.innerHTML = `<span class="legend-dot" style="--legend-color:${category.color}"></span><span>${category.name}</span>`;
-    return item;
+  const cornerGroups = [[0, 1, 2], [3, 4, 5]];
+  const cornerNames = ["top-left", "top-right"];
+  legend.replaceChildren(...cornerGroups.map((indices, cornerIndex) => {
+    const corner = document.createElement("div");
+    corner.className = `legend-corner ${cornerNames[cornerIndex]}`;
+    corner.replaceChildren(...indices.map(index => {
+      const category = CATEGORIES[index];
+      const item = document.createElement("div");
+      item.className = "legend-item";
+      item.innerHTML = `<span class="legend-dot" style="--legend-color:${category.color}"></span><span>${category.name}</span>`;
+      return item;
+    }));
+    return corner;
   }));
 }
 
@@ -219,6 +241,7 @@ function render() {
   document.querySelector("#roll-die").disabled = state.phase !== "roll";
   document.querySelector("#undo-button").disabled = undoStack.length === 0;
   document.querySelector("#game-mode").value = state.mode;
+  document.querySelector("#question-seconds").value = state.questionSeconds;
   document.querySelector("#game-mode").disabled = state.phase !== "roll" || state.winner !== null;
   document.querySelector("#next-turn").disabled = state.winner !== null;
   document.querySelector("#manual-move").disabled = state.winner !== null;
@@ -296,6 +319,7 @@ function renderTeams() {
 function rollDie() {
   if (state.phase !== "roll") return;
   snapshot();
+  manualMove = false;
   state.rolled = Math.floor(Math.random() * 6) + 1;
   state.phase = "move";
   reachable = endpoints(state.teams[state.activeTeam].position, state.rolled);
@@ -358,6 +382,7 @@ function showQuestion(categoryIndex) {
   currentQuestion = { ...drawn, options: shuffled.map(option => option.text), correctOption: shuffled.findIndex(option => option.correct) };
   selectedOption = null;
   answerRevealed = false;
+  questionExpired = false;
   document.querySelector("#question-team").textContent = state.teams[state.activeTeam].name + (finalChallenge ? " - Final challenge" : "");
   document.querySelector("#question-category").textContent = category.name;
   document.querySelector("#question-text").textContent = currentQuestion.question;
@@ -369,15 +394,19 @@ function showQuestion(categoryIndex) {
   document.querySelector("#category-choice").hidden = true;
   renderAnswerChoices();
   setQuestionControlsEnabled(false);
-  document.querySelector("#change-question").disabled = !hasAvailableQuestion(category.id);
+  document.querySelector("#ask-again").disabled = !hasAvailableQuestion(category.id);
+  document.querySelector("#change-question").disabled = !questions.some(item => !state.seenQuestionKeys.includes(questionKey(item)));
   document.querySelector("#reveal-answer").disabled = false;
   document.querySelector("#skip-question").hidden = true;
   answerPanel.hidden = true;
+  document.querySelector("#question-timer-status").hidden = true;
   if (!questionDialog.open) questionDialog.showModal();
+  startQuestionTimer();
   saveState();
 }
 
 function openHubCategoryChoice(message = null) {
+  stopQuestionTimer();
   currentQuestion = null;
   currentCategoryIndex = null;
   selectedOption = null;
@@ -393,8 +422,11 @@ function openHubCategoryChoice(message = null) {
   document.querySelector("#skip-question").hidden = false;
   document.querySelector("#question-text").textContent = "";
   document.querySelector("#question-text").hidden = true;
+  document.querySelector("#question-timer").value = "--:--";
+  document.querySelector("#question-timer").classList.remove("time-up");
   document.querySelector("#answer-choices").replaceChildren();
   answerPanel.hidden = true;
+  document.querySelector("#question-timer-status").hidden = true;
   setQuestionControlsEnabled(false);
   if (!questionDialog.open) questionDialog.showModal();
 }
@@ -412,13 +444,28 @@ function renderAnswerChoices() {
 }
 
 function selectAnswer(index) {
+  updateQuestionTimer();
   if (!currentQuestion || selectedOption !== null || answerRevealed) return;
   selectedOption = index;
   revealCorrectAnswer();
 }
 
+function retryQuestion() {
+  if (!currentQuestion) return;
+  selectedOption = null;
+  answerRevealed = false;
+  questionExpired = false;
+  answerPanel.hidden = true;
+  document.querySelector("#question-timer-status").hidden = true;
+  renderAnswerChoices();
+  setQuestionControlsEnabled(false);
+  document.querySelector("#reveal-answer").disabled = false;
+  startQuestionTimer();
+}
+
 function revealCorrectAnswer() {
   if (!currentQuestion) return;
+  stopQuestionTimer();
   answerRevealed = true;
   const choices = [...document.querySelectorAll(".answer-choice")];
   choices.forEach((choice, index) => {
@@ -433,11 +480,13 @@ function revealCorrectAnswer() {
 }
 
 function setQuestionControlsEnabled(enabled) {
-  document.querySelector("#change-question").disabled = !enabled || currentCategoryIndex === null ||
+  document.querySelector("#retry-question").disabled = currentQuestion === null;
+  document.querySelector("#ask-again").disabled = currentCategoryIndex === null ||
     !hasAvailableQuestion(CATEGORIES[currentCategoryIndex].id);
+  document.querySelector("#change-question").disabled = currentCategoryIndex === null ||
+    !questions.some(item => !state.seenQuestionKeys.includes(questionKey(item)));
   document.querySelector("#reveal-answer").disabled = !enabled;
-  document.querySelector("#incorrect-answer").disabled = !enabled;
-  document.querySelector("#correct-answer").disabled = !enabled;
+  document.querySelector("#continue-answer").disabled = !enabled;
 }
 
 function buildCategoryChoice() {
@@ -455,12 +504,14 @@ function buildCategoryChoice() {
   });
 }
 
-function resolveAnswer(correct) {
+function resolveAnswer() {
   if (!questionDialog.open || !currentQuestion || !answerRevealed || state.winner !== null) return;
+  const correct = !questionExpired && selectedOption !== null && selectedOption === currentQuestion.correctOption;
   const team = state.teams[state.activeTeam];
   const node = nodeMap.get(team.position);
   const category = CATEGORIES[currentCategoryIndex];
   snapshot();
+  stopQuestionTimer();
   questionDialog.close();
 
   if (correct) {
@@ -535,6 +586,7 @@ function escapeHtml(value) {
 }
 
 function advanceTurn() {
+  stopQuestionTimer();
   state.activeTeam = (state.activeTeam + 1) % state.teams.length;
   state.phase = "roll";
   state.rolled = null;
@@ -565,6 +617,7 @@ function toggleWedge(teamIndex, categoryId) {
 
 function undo() {
   if (!undoStack.length) return;
+  stopQuestionTimer();
   const seenQuestionKeys = state.seenQuestionKeys;
   state = JSON.parse(undoStack.pop());
   state.seenQuestionKeys = [...new Set([...(state.seenQuestionKeys || []), ...seenQuestionKeys])];
@@ -579,8 +632,11 @@ function undo() {
 }
 
 function resetGame() {
+  stopQuestionTimer();
   if (winnerDialog.open) winnerDialog.close();
+  const questionSeconds = state.questionSeconds;
   state = initialState();
+  state.questionSeconds = questionSeconds;
   undoStack = [];
   reachable.clear();
   manualMove = false;
@@ -631,6 +687,29 @@ function isValidQuestion(item) {
     Number.isInteger(item.correctOption) &&
     item.correctOption >= 0 &&
     item.correctOption < item.options.length;
+}
+
+function stopQuestionTimer() {
+  questionDeadline = null;
+}
+
+function startQuestionTimer() {
+  questionDeadline = Date.now() + state.questionSeconds * 1000;
+  document.querySelector("#question-timer").classList.remove("time-up");
+  updateQuestionTimer();
+}
+
+function updateQuestionTimer() {
+  if (questionDeadline === null || !currentQuestion || answerRevealed) return;
+  const remaining = Math.max(0, Math.ceil((questionDeadline - Date.now()) / 1000));
+  const display = document.querySelector("#question-timer");
+  display.value = `${String(Math.floor(remaining / 60)).padStart(2, "0")}:${String(remaining % 60).padStart(2, "0")}`;
+  if (remaining === 0) {
+    questionExpired = true;
+    display.classList.add("time-up");
+    document.querySelector("#question-timer-status").hidden = false;
+    revealCorrectAnswer();
+  }
 }
 
 function elapsedTime() {
@@ -692,6 +771,15 @@ document.querySelector("#confirm-finish").addEventListener("click", () => {
 });
 questionDialog.addEventListener("cancel", event => event.preventDefault());
 setInterval(updateClock, 1000);
+setInterval(updateQuestionTimer, 200);
+
+document.querySelector("#question-seconds").addEventListener("change", event => {
+  const seconds = Number(event.target.value);
+  state.questionSeconds = Number.isInteger(seconds) ? Math.min(300, Math.max(5, seconds)) : state.questionSeconds;
+  event.target.value = state.questionSeconds;
+  saveState();
+  if (currentQuestion && !answerRevealed) startQuestionTimer();
+});
 
 document.querySelector("#roll-die").addEventListener("click", rollDie);
 document.querySelector("#next-turn").addEventListener("click", nextTurn);
@@ -702,10 +790,13 @@ document.querySelector("#confirm-reset").addEventListener("click", resetGame);
 document.querySelector("#review-board").addEventListener("click", () => winnerDialog.close());
 document.querySelector("#winner-new-game").addEventListener("click", resetGame);
 document.querySelector("#reveal-answer").addEventListener("click", revealCorrectAnswer);
-document.querySelector("#correct-answer").addEventListener("click", () => resolveAnswer(true));
-document.querySelector("#incorrect-answer").addEventListener("click", () => resolveAnswer(false));
-document.querySelector("#change-question").addEventListener("click", () => {
+document.querySelector("#continue-answer").addEventListener("click", resolveAnswer);
+document.querySelector("#retry-question").addEventListener("click", retryQuestion);
+document.querySelector("#ask-again").addEventListener("click", () => {
   if (currentCategoryIndex !== null) showQuestion(currentCategoryIndex);
+});
+document.querySelector("#change-question").addEventListener("click", () => {
+  if (currentCategoryIndex !== null) openHubCategoryChoice("Choose a new question category");
 });
 document.querySelector("#skip-question").addEventListener("click", () => {
   if (questionDialog.open && currentQuestion === null) nextTurn();

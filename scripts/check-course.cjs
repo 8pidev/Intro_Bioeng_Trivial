@@ -4,13 +4,13 @@ const path = require("node:path");
 const vm = require("node:vm");
 const root = path.resolve(__dirname, "..");
 const bank = JSON.parse(fs.readFileSync(path.join(root, "questions.json"), "utf8"));
-assert.equal(bank.length, 120);
-assert.equal(new Set(bank.map(q => q.id)).size, 120);
-assert.equal(new Set(bank.map(q => q.question.toLowerCase())).size, 120);
+assert.equal(bank.length, 240);
+assert.equal(new Set(bank.map(q => q.id)).size, 240);
+assert.equal(new Set(bank.map(q => q.question.toLowerCase())).size, 240);
 for (const category of ["light", "biooptics", "microscopy", "images", "bodyimaging", "assays"]) {
   const subset = bank.filter(q => q.category === category);
-  assert.equal(subset.length, 20);
-  for (const [difficulty, count] of [["introductory", 12], ["application", 6], ["challenge", 2]]) {
+  assert.equal(subset.length, 40);
+  for (const [difficulty, count] of [["introductory", 24], ["application", 12], ["challenge", 4]]) {
     assert.equal(subset.filter(q => q.difficulty === difficulty).length, count);
   }
   for (const q of subset) {
@@ -23,4 +23,4 @@ for (const category of ["light", "biooptics", "microscopy", "images", "bodyimagi
 }
 const bundled = vm.runInNewContext(fs.readFileSync(path.join(root, "questions-data.js"), "utf8") + "\nJSON.stringify(DEFAULT_QUESTIONS)");
 assert.deepEqual(JSON.parse(bundled), bank);
-console.log("120 unique questions validated; all categories, difficulty counts, choices, and offline bundle match.");
+console.log("240 unique questions validated; all categories, difficulty counts, choices, and offline bundle match.");
