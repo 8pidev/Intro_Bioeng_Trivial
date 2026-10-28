@@ -8,7 +8,9 @@ Chrome or Edge: no server, account, internet connection, or installation needed.
 Teams start as Alpha, Beta, Gamma, Delta, Epsilon, and Zeta. Names remain editable.
 Only the active team's star is shown on the board; the other teams keep their
 saved positions until their turns. Questions fill the browser window, with
-larger answer choices for projection. Use Full screen to hide browser chrome.
+larger answer choices for projection. The team panel sits in the board's lower
+corner, with larger wedges. Use Full screen to hide browser chrome and enlarge
+interface text for a projector.
 The six categories are:
 
 | ID | Board category |
@@ -41,8 +43,10 @@ Classroom mode is the default. A typical schedule is 5 minutes for rules,
 - At zero the choices lock, the answer is revealed, and Continue awards no credit.
   Retry same question restarts the timer; a new question starts a fresh timer.
 - Six wedges unlock a final challenge on that team's next move, anywhere.
-- A correct final answer wins immediately. A wrong answer passes the turn;
-  the final can be attempted again on a later move.
+- A correct final answer marks that team complete. Show final results immediately,
+  or let the remaining teams finish the current round. Teams completing the
+  final in that same round share first place; completed teams do not play again.
+  A wrong answer passes the turn, and the final can be attempted later.
 - At 60 minutes the clock displays 00:00. It does not interrupt a question.
   Finish the question, then press End class & rank.
 - Class results rank teams by wedges, then total correct answers.

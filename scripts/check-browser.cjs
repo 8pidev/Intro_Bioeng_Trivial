@@ -7,6 +7,12 @@ const { chromium } = require("playwright");
   const browser = await chromium.launch({ headless: true, ...(process.env.BROWSER_EXECUTABLE ? { executablePath: process.env.BROWSER_EXECUTABLE } : {}) });
   try {
     const page = await browser.newPage({ viewport: { width: 1280, height: 720 } });
+    const importBundledQuestions = async () => {
+      const data = await page.evaluate(() => JSON.stringify(DEFAULT_QUESTIONS));
+      await page.locator("#question-file").setInputFiles({
+        name: "questions.json", mimeType: "application/json", buffer: Buffer.from(data)
+      });
+    };
     await page.emulateMedia({ reducedMotion: "reduce" });
     page.setDefaultTimeout(5000);
     const errors = [];
@@ -95,7 +101,7 @@ const { chromium } = require("playwright");
     await page.reload();
     assert.equal(await page.evaluate(() => questionFor("assays")), null);
     assert.equal(await page.evaluate(() => state.seenQuestionKeys.length), 41);
-    await page.locator("#question-file").setInputFiles(path.resolve(__dirname, "../questions.json"));
+    await importBundledQuestions();
     await page.reload();
     assert.equal(await page.evaluate(() => questionFor("assays")), null);
 
@@ -168,9 +174,91 @@ const { chromium } = require("playwright");
     await page.locator("#category-choice").getByRole("button", { name: "Pixels & Image Quality", exact: true }).click();
     await page.locator(".answer-choice").nth(await page.evaluate(() => currentQuestion.correctOption)).click();
     await page.locator("#continue-answer").click();
-    assert.equal(await page.locator("#winner-name").textContent(), "Alpha wins!");
+    assert.equal(await page.locator("#completion-name").textContent(), "Alpha completed the game!");
+    assert.equal(await page.evaluate(() => state.winner), null);
+    assert.deepEqual(await page.evaluate(() => state.finishers), [0]);
     await page.reload();
+    assert.equal(await page.locator("#completion-dialog").isVisible(), true);
+    await page.locator("#completion-continue").click();
+    assert.equal(await page.evaluate(() => state.activeTeam), 1);
+    assert.equal(await page.locator(".board .token").getAttribute("title"), "Beta");
+    await page.reload();
+    assert.equal(await page.evaluate(() => state.activeTeam), 1);
+    assert.deepEqual(await page.evaluate(() => state.finishers), [0]);
+    assert.equal(await page.locator("#completion-dialog").isVisible(), false);
+    for (let team = 1; team <= 5; team += 1) {
+      await page.locator("#next-turn").click();
+    }
     assert.equal(await page.locator("#winner-dialog").isVisible(), true);
+    assert.equal(await page.locator("#winner-name").textContent(), "Alpha wins!");
+
+    // Two teams completing the final in the same round share first place.
+    await page.evaluate(() => { resetGame(); state.teams[0].wedges = CATEGORIES.map(category => category.id); render(); });
+    await page.locator("#manual-move").click();
+    await page.locator('[data-node="r2"]').click();
+    await page.locator("#category-choice").getByRole("button", { name: "Pixels & Image Quality", exact: true }).click();
+    await page.locator(".answer-choice").nth(await page.evaluate(() => currentQuestion.correctOption)).click();
+    await page.locator("#continue-answer").click();
+    await page.locator("#completion-continue").click();
+    await page.evaluate(() => { state.teams[1].wedges = CATEGORIES.map(category => category.id); render(); });
+    await page.locator("#manual-move").click();
+    await page.locator('[data-node="r2"]').click();
+    await page.locator("#category-choice").getByRole("button", { name: "Pixels & Image Quality", exact: true }).click();
+    await page.locator(".answer-choice").nth(await page.evaluate(() => currentQuestion.correctOption)).click();
+    await page.locator("#continue-answer").click();
+    assert.deepEqual(await page.evaluate(() => state.finishers), [0, 1]);
+    await page.locator("#completion-continue").click();
+    for (let team = 2; team <= 5; team += 1) {
+      await page.locator("#next-turn").click();
+    }
+    assert.equal(await page.locator("#winner-name").textContent(), "Alpha & Beta share first place!");
+    assert.deepEqual(await page.locator(".standing-place").evaluateAll(nodes => nodes.slice(0, 3).map(node => node.textContent)), ["1", "1", "3"]);
+
+    // The teacher can also end the round immediately from the completion screen.
+    await page.evaluate(() => { resetGame(); state.teams[0].wedges = CATEGORIES.map(category => category.id); render(); });
+    await page.locator("#manual-move").click();
+    await page.locator('[data-node="r2"]').click();
+    await page.locator("#category-choice").getByRole("button", { name: "Pixels & Image Quality", exact: true }).click();
+    await page.locator(".answer-choice").nth(await page.evaluate(() => currentQuestion.correctOption)).click();
+    await page.locator("#continue-answer").click();
+    await page.locator("#completion-results").click();
+    assert.equal(await page.locator("#winner-name").textContent(), "Alpha wins!");
+
+    // A middle-of-order finisher leaves turns only for the later teams.
+    await page.evaluate(() => {
+      resetGame();
+      state.activeTeam = 3;
+      state.teams[3].wedges = CATEGORIES.map(category => category.id);
+      render();
+    });
+    await page.locator("#manual-move").click();
+    await page.locator('[data-node="r2"]').click();
+    await page.locator("#category-choice").getByRole("button", { name: "Pixels & Image Quality", exact: true }).click();
+    await page.locator(".answer-choice").nth(await page.evaluate(() => currentQuestion.correctOption)).click();
+    await page.locator("#continue-answer").click();
+    assert.match(await page.locator("#completion-summary").textContent(), /^Epsilon, Zeta have a turn left/);
+    await page.locator("#completion-continue").click();
+    assert.equal(await page.evaluate(() => state.activeTeam), 4);
+    await page.locator("#next-turn").click();
+    assert.equal(await page.evaluate(() => state.activeTeam), 5);
+    await page.locator("#next-turn").click();
+    assert.equal(await page.locator("#winner-name").textContent(), "Delta wins!");
+
+    // If the last team finishes, there are no remaining turns to continue.
+    await page.evaluate(() => {
+      resetGame();
+      state.activeTeam = 5;
+      state.teams[5].wedges = CATEGORIES.map(category => category.id);
+      render();
+    });
+    await page.locator("#manual-move").click();
+    await page.locator('[data-node="r2"]').click();
+    await page.locator("#category-choice").getByRole("button", { name: "Pixels & Image Quality", exact: true }).click();
+    await page.locator(".answer-choice").nth(await page.evaluate(() => currentQuestion.correctOption)).click();
+    await page.locator("#continue-answer").click();
+    assert.equal(await page.locator("#completion-continue").isVisible(), false);
+    await page.locator("#completion-results").click();
+    assert.equal(await page.locator("#winner-name").textContent(), "Zeta wins!");
 
     // Timed class results respect wedges, correct answers, and exact ties.
     await page.evaluate(() => {
@@ -226,7 +314,7 @@ const { chromium } = require("playwright");
     await page.reload();
     assert.equal(await page.locator("#clock-toggle").textContent(), "Pause clock");
     await page.locator("#clock-toggle").click();
-    await page.locator("#question-file").setInputFiles(path.resolve(__dirname, "../questions.json"));
+    await importBundledQuestions();
     await page.reload();
     assert.equal(await page.evaluate(() => questions.length), 240);
     await page.evaluate(() => resetGame());
@@ -252,26 +340,41 @@ const { chromium } = require("playwright");
       const panel = document.querySelector(".teams-card").getBoundingClientRect();
       return [...document.querySelectorAll(".team-row")].every(row => row.getBoundingClientRect().bottom <= panel.bottom);
     }), true, "All six teams must fit on a 1280 x 720 projector");
+    assert.equal(await page.locator(".board-panel .teams-card .team-row").count(), 6);
+    assert.ok(await page.locator(".wedge").first().evaluate(wedge => wedge.getBoundingClientRect().width) >= 26);
+    await page.locator(".team-row").first().locator(".wedge").first().click();
+    assert.deepEqual(await page.evaluate(() => state.teams[0].wedges), ["light"]);
+    await page.locator(".team-row").first().locator(".wedge").first().click();
+    assert.deepEqual(await page.evaluate(() => state.teams[0].wedges), []);
     assert.equal(await page.locator(".legend-corner").count(), 2);
     assert.deepEqual(await page.locator(".legend-corner").evaluateAll(nodes => nodes.map(node => node.children.length)), [3, 3]);
     assert.deepEqual(await page.locator(".legend-item").allTextContents(),
       await page.evaluate(() => CATEGORIES.map(category => category.name)));
-    const legendClearsSpaces = () => page.evaluate(() => {
-      const corners = [...document.querySelectorAll(".legend-corner")].map(item => item.getBoundingClientRect());
+    const overlaysClearSpaces = () => page.evaluate(() => {
+      const overlays = [...document.querySelectorAll(".legend-corner, .teams-card")].map(item => item.getBoundingClientRect());
       const spaces = [...document.querySelectorAll(".space")].map(item => item.getBoundingClientRect());
-      return corners.every(corner => spaces.every(space =>
-        corner.right <= space.left || corner.left >= space.right ||
-        corner.bottom <= space.top || corner.top >= space.bottom));
+      return overlays.every(overlay => spaces.every(space =>
+        overlay.right <= space.left || overlay.left >= space.right ||
+        overlay.bottom <= space.top || overlay.top >= space.bottom));
     });
-    assert.equal(await legendClearsSpaces(), true, "Corner labels must not cover board spaces at 1280 x 720");
+    assert.equal(await overlaysClearSpaces(), true, "Overlays must not cover board spaces at 1280 x 720");
     await page.setViewportSize({ width: 1080, height: 720 });
-    assert.equal(await legendClearsSpaces(), true, "Corner labels must not cover board spaces at 1080 x 720");
+    assert.equal(await overlaysClearSpaces(), true, "Overlays must not cover board spaces at 1080 x 720");
     await page.setViewportSize({ width: 1280, height: 720 });
     await page.screenshot({ path: "/tmp/intro-bioeng-board.png" });
+    await page.setViewportSize({ width: 1920, height: 1080 });
+    await page.locator("#fullscreen-button").click();
+    assert.equal(await page.evaluate(() => Boolean(document.fullscreenElement)), true);
+    assert.ok(await page.evaluate(() => parseFloat(getComputedStyle(document.documentElement).fontSize)) >= 20);
+    assert.ok(await page.locator(".wedge").first().evaluate(wedge => wedge.getBoundingClientRect().width) >= 35);
+    assert.equal(await overlaysClearSpaces(), true, "Overlays must not cover board spaces in fullscreen");
+    await page.screenshot({ path: "/tmp/intro-bioeng-board-fullscreen.png" });
     await page.locator("#manual-move").click();
     await page.locator('[data-node="r1"]').click();
+    assert.ok(await page.locator(".answer-choice").first().evaluate(choice => parseFloat(getComputedStyle(choice).fontSize)) >= 35);
+    assert.ok(await page.locator(".question-text").evaluate(question => parseFloat(getComputedStyle(question).fontSize)) <= 60);
     await page.screenshot({ path: "/tmp/intro-bioeng-question.png" });
     assert.deepEqual(errors, []);
-    console.log("Browser checks passed: center-six movement, automatic scoring, adjustable question timer and timeout, no repeats after retry, exhaustion, import, refresh, or Undo; category fallback, finals, class clock; no page errors.");
+    console.log("Browser checks passed: enlarged wedges, board-corner layout, fullscreen type, round completion, ties, movement, scoring, timer, no-repeat questions, and classic mode; no page errors.");
   } finally { await browser.close(); }
 })().catch(error => { console.error(error); process.exitCode = 1; });

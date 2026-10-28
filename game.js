@@ -26,6 +26,7 @@ const dieResult = document.querySelector("#die-result");
 const questionDialog = document.querySelector("#question-dialog");
 const answerPanel = document.querySelector("#answer-panel");
 const resetDialog = document.querySelector("#reset-dialog");
+const completionDialog = document.querySelector("#completion-dialog");
 const winnerDialog = document.querySelector("#winner-dialog");
 
 let questions = [...DEFAULT_QUESTIONS];
@@ -60,6 +61,7 @@ function initialState() {
   return {
     activeTeam: 0,
     winner: null,
+    finishers: [],
     rolled: null,
     phase: "roll",
     mode: "classroom",
@@ -93,7 +95,11 @@ function loadState() {
         }
       }
       const restored = { ...initialState(), ...stored, seenQuestionKeys: [...seenQuestionKeys],
-        rolled: null, phase: stored.winner === null || stored.winner === undefined ? "roll" : "won" };
+        rolled: null, phase: stored.winner !== null && stored.winner !== undefined ? "won" :
+          stored.phase === "completed" ? "completed" : "roll" };
+      restored.finishers = Array.isArray(stored.finishers) ? stored.finishers.filter(index =>
+        Number.isInteger(index) && index >= 0 && index < 6) :
+        stored.finishReason === "final" && stored.winner !== null ? [stored.winner] : [];
       restored.questionSeconds = Number.isInteger(stored.questionSeconds) && stored.questionSeconds >= 5 && stored.questionSeconds <= 300
         ? stored.questionSeconds : 30;
       delete restored.usedQuestions;
@@ -238,20 +244,25 @@ function render() {
   document.querySelector("#active-team-name").textContent = team.name;
   document.querySelector("#active-team-dot").style.setProperty("--team-color", team.color);
   dieResult.value = state.rolled ?? "–";
-  document.querySelector("#roll-die").disabled = state.phase !== "roll";
+  document.querySelector("#roll-die").disabled = state.phase !== "roll" || state.finishers.includes(state.activeTeam);
   document.querySelector("#undo-button").disabled = undoStack.length === 0;
   document.querySelector("#game-mode").value = state.mode;
   document.querySelector("#question-seconds").value = state.questionSeconds;
-  document.querySelector("#game-mode").disabled = state.phase !== "roll" || state.winner !== null;
-  document.querySelector("#next-turn").disabled = state.winner !== null;
-  document.querySelector("#manual-move").disabled = state.winner !== null;
-  document.querySelector("#finish-class").disabled = state.winner !== null || state.phase === "question";
+  document.querySelector("#game-mode").disabled = state.phase !== "roll" || state.finishers.length > 0 || state.winner !== null;
+  document.querySelector("#next-turn").disabled = state.winner !== null || state.phase === "completed";
+  document.querySelector("#manual-move").disabled = state.winner !== null || state.phase === "completed";
+  document.querySelector("#finish-class").disabled = state.winner !== null || state.phase === "question" || state.phase === "completed";
+  document.querySelector("#finish-class").textContent = state.finishers.length ? "Show results" : "End class & rank";
   document.querySelector("#session-hint").textContent = state.mode === "classroom"
     ? "Any color earns its wedge. One question per turn. Six wedges unlock a final question on your next move."
     : "Headquarters earn wedges. Correct answers keep the turn. Return to the hub for the final.";
+  if (state.finishers.length && state.winner === null) {
+    document.querySelector("#session-hint").textContent = `${state.finishers.map(index => state.teams[index].name).join(" & ")} completed. Finish the current round, or show results now.`;
+  }
   updateClock();
 
   if (state.winner !== null) statusText.textContent = "Game complete. Reset to start a new class game.";
+  else if (state.phase === "completed") statusText.textContent = `${team.name} completed the final challenge.`;
   else if (manualMove) statusText.textContent = "Manual move: select any board space.";
   else if (state.phase === "move") statusText.textContent = `Move exactly ${state.rolled} spaces. Highlighted destinations are valid.`;
   else statusText.textContent = "Roll the die to begin this group's turn.";
@@ -275,13 +286,15 @@ function render() {
 
   renderTeams();
   saveState();
+  if (state.phase === "completed" && !completionDialog.open) showCompletion();
   if (state.winner !== null && state.winner !== undefined && !winnerDialog.open) showWinner();
 }
 
 function renderTeams() {
   teamsList.replaceChildren(...state.teams.map((team, teamIndex) => {
     const row = document.createElement("div");
-    row.className = `team-row${teamIndex === state.activeTeam ? " active" : ""}`;
+    row.className = `team-row${teamIndex === state.activeTeam ? " active" : ""}${state.finishers.includes(teamIndex) ? " completed" : ""}`;
+    if (state.finishers.includes(teamIndex)) row.title = "Completed the final challenge";
     row.style.setProperty("--team-color", team.color);
     const marker = document.createElement("span");
     marker.className = "team-marker";
@@ -313,7 +326,7 @@ function renderTeams() {
 }
 
 function rollDie() {
-  if (state.phase !== "roll") return;
+  if (state.phase !== "roll" || state.finishers.includes(state.activeTeam)) return;
   snapshot();
   manualMove = false;
   state.rolled = Math.floor(Math.random() * 6) + 1;
@@ -513,11 +526,9 @@ function resolveAnswer() {
   if (correct) {
     team.correctAnswers += 1;
     if (finalChallenge) {
-      state.winner = state.activeTeam;
-      state.finishReason = "final";
-      state.phase = "won";
+      state.finishers.push(state.activeTeam);
+      state.phase = "completed";
       state.rolled = null;
-      pauseClock();
       render();
       return;
     }
@@ -540,26 +551,46 @@ function rankedTeams() {
   return state.teams
     .map((team, index) => ({ ...team, index }))
     .sort((a, b) => {
-      if (a.index === state.winner) return -1;
-      if (b.index === state.winner) return 1;
+      if (state.finishReason === "final") {
+        const aFinished = state.finishers.includes(a.index);
+        const bFinished = state.finishers.includes(b.index);
+        if (aFinished !== bFinished) return aFinished ? -1 : 1;
+        if (aFinished) return state.finishers.indexOf(a.index) - state.finishers.indexOf(b.index);
+      }
       return b.wedges.length - a.wedges.length || b.correctAnswers - a.correctAnswers || a.index - b.index;
     });
 }
 
+function showCompletion() {
+  const team = state.teams[state.activeTeam];
+  const remaining = state.teams.slice(state.activeTeam + 1).filter((_, offset) =>
+    !state.finishers.includes(state.activeTeam + 1 + offset));
+  document.querySelector("#completion-name").textContent = `${team.name} completed the game!`;
+  document.querySelector("#completion-summary").textContent = remaining.length
+    ? `${remaining.map(entry => entry.name).join(", ")} ${remaining.length === 1 ? "has" : "have"} a turn left in this round. You can show results now or let them play.`
+    : "The round is complete. Show the final results.";
+  document.querySelector("#completion-star").style.setProperty("--winner-color", team.color);
+  document.querySelector("#completion-continue").hidden = remaining.length === 0;
+  completionDialog.showModal();
+}
+
 function showWinner() {
   const winner = state.teams[state.winner];
-  const leaders = state.finishReason === "class" ? classLeaders() : [winner];
+  const leaders = state.finishReason === "class" ? classLeaders() : state.finishers.map(index => state.teams[index]);
   document.querySelector("#winner-name").textContent = `${leaders.map(team => team.name).join(" & ")} ${leaders.length > 1 ? "share first place!" : "wins!"}`;
   document.querySelector("#winner-summary").textContent = state.finishReason === "class"
     ? `Class results: ${winner.wedges.length} wedges and ${winner.correctAnswers} correct answers. Ranked by wedges, then correct answers.`
-    : `All six wedges, a successful final challenge, and ${winner.correctAnswers} correct answers.`;
+    : leaders.length > 1 ? "These teams completed the final challenge in the same round and share first place. Others are ranked by wedges, then correct answers."
+      : `All six wedges, a successful final challenge, and ${winner.correctAnswers} correct answers.`;
   document.querySelector("#winner-star").style.setProperty("--winner-color", winner.color);
   const standings = document.querySelector("#standings");
   let previous = null;
   let place = 1;
   standings.replaceChildren(...rankedTeams().map((team, position) => {
-    const tied = previous && team.wedges.length === previous.wedges.length && team.correctAnswers === previous.correctAnswers &&
-      (state.finishReason === "class" || previous.index !== state.winner);
+    const finished = state.finishReason === "final" && state.finishers.includes(team.index);
+    const previousFinished = previous && state.finishReason === "final" && state.finishers.includes(previous.index);
+    const tied = previous && (finished && previousFinished ||
+      !finished && !previousFinished && team.wedges.length === previous.wedges.length && team.correctAnswers === previous.correctAnswers);
     if (!tied) place = position + 1;
     previous = team;
     const row = document.createElement("div");
@@ -583,18 +614,38 @@ function escapeHtml(value) {
 
 function advanceTurn() {
   stopQuestionTimer();
-  state.activeTeam = (state.activeTeam + 1) % state.teams.length;
-  state.phase = "roll";
   state.rolled = null;
   currentQuestion = null;
   currentCategoryIndex = null;
   selectedOption = null;
   reachable.clear();
   manualMove = false;
+  if (state.finishers.length) {
+    const next = state.teams.findIndex((_, index) => index > state.activeTeam && !state.finishers.includes(index));
+    if (next === -1) {
+      completeFinalGame();
+      return;
+    }
+    state.activeTeam = next;
+  } else {
+    state.activeTeam = (state.activeTeam + 1) % state.teams.length;
+  }
+  state.phase = "roll";
+}
+
+function completeFinalGame() {
+  state.winner = state.finishers[0];
+  state.finishReason = "final";
+  state.phase = "won";
+  state.rolled = null;
+  reachable.clear();
+  manualMove = false;
+  pauseClock();
+  if (completionDialog.open) completionDialog.close();
 }
 
 function nextTurn() {
-  if (state.winner !== null) return;
+  if (state.winner !== null || state.phase === "completed") return;
   snapshot();
   if (questionDialog.open) questionDialog.close();
   advanceTurn();
@@ -620,6 +671,7 @@ function undo() {
   reachable.clear();
   manualMove = false;
   if (questionDialog.open) questionDialog.close();
+  if (completionDialog.open) completionDialog.close();
   if (winnerDialog.open) winnerDialog.close();
   if (state.phase === "move") reachable = endpoints(state.teams[state.activeTeam].position, state.rolled);
   if (state.phase === "question") { state.phase = "roll"; state.rolled = null; }
@@ -629,6 +681,7 @@ function undo() {
 
 function resetGame() {
   stopQuestionTimer();
+  if (completionDialog.open) completionDialog.close();
   if (winnerDialog.open) winnerDialog.close();
   const questionSeconds = state.questionSeconds;
   state = initialState();
@@ -737,6 +790,11 @@ function classLeaders() {
 function finishClass() {
   if (state.winner !== null || state.phase === "question") return;
   snapshot();
+  if (state.finishers.length) {
+    completeFinalGame();
+    render();
+    return;
+  }
   state.winner = state.teams.indexOf(classLeaders()[0]);
   state.finishReason = "class";
   state.phase = "won";
@@ -755,17 +813,24 @@ document.querySelector("#clock-toggle").addEventListener("click", () => {
   updateClock();
 });
 document.querySelector("#game-mode").addEventListener("change", event => {
-  if (state.phase !== "roll" || state.winner !== null) return;
+  if (state.phase !== "roll" || state.finishers.length || state.winner !== null) return;
   snapshot();
   state.mode = event.target.value;
   render();
 });
-document.querySelector("#finish-class").addEventListener("click", () => document.querySelector("#finish-dialog").showModal());
+document.querySelector("#finish-class").addEventListener("click", () => {
+  document.querySelector("#finish-dialog-title").textContent = state.finishers.length ? "Show final results?" : "End the class game?";
+  document.querySelector("#finish-dialog-description").textContent = state.finishers.length
+    ? "The current round will end now. Teams that completed the final challenge share first place."
+    : "The class winner is ranked by wedges, then correct answers. Exact ties share a place.";
+  document.querySelector("#finish-dialog").showModal();
+});
 document.querySelector("#confirm-finish").addEventListener("click", () => {
   document.querySelector("#finish-dialog").close();
   finishClass();
 });
 questionDialog.addEventListener("cancel", event => event.preventDefault());
+completionDialog.addEventListener("cancel", event => event.preventDefault());
 setInterval(updateClock, 1000);
 setInterval(updateQuestionTimer, 200);
 
@@ -783,6 +848,15 @@ document.querySelector("#undo-button").addEventListener("click", undo);
 document.querySelector("#manual-move").addEventListener("click", () => { manualMove = !manualMove; reachable.clear(); render(); });
 document.querySelector("#reset-button").addEventListener("click", () => resetDialog.showModal());
 document.querySelector("#confirm-reset").addEventListener("click", resetGame);
+document.querySelector("#completion-continue").addEventListener("click", () => {
+  completionDialog.close();
+  advanceTurn();
+  render();
+});
+document.querySelector("#completion-results").addEventListener("click", () => {
+  completeFinalGame();
+  render();
+});
 document.querySelector("#review-board").addEventListener("click", () => winnerDialog.close());
 document.querySelector("#winner-new-game").addEventListener("click", resetGame);
 document.querySelector("#reveal-answer").addEventListener("click", revealCorrectAnswer);

@@ -32,6 +32,13 @@
             </div>
           </div>
           <div class="board-legend" id="board-legend"></div>
+          <section class="teams-card">
+            <div class="section-heading">
+              <p class="section-label">Teams</p>
+              <span class="subtle">Click wedges to adjust</span>
+            </div>
+            <div id="teams-list" class="teams-list"></div>
+          </section>
         </div>
 
         <aside class="sidebar">
@@ -67,13 +74,6 @@
             </div>
           </section>
 
-          <section class="teams-card">
-            <div class="section-heading">
-              <p class="section-label">Teams</p>
-              <span class="subtle">Click wedges to adjust</span>
-            </div>
-            <div id="teams-list" class="teams-list"></div>
-          </section>
         </aside>
       </section>
     </main>
@@ -129,6 +129,19 @@
       </form>
     </dialog>
 
+    <dialog class="winner-dialog" id="completion-dialog">
+      <div class="winner-screen">
+        <p class="winner-kicker">Final challenge completed</p>
+        <div class="winner-star" id="completion-star"></div>
+        <h2 id="completion-name">Alpha completed the game!</h2>
+        <p class="winner-summary" id="completion-summary"></p>
+        <div class="winner-actions">
+          <button class="button button-secondary" id="completion-results" type="button">Show final results</button>
+          <button class="button button-primary" id="completion-continue" type="button">Continue round</button>
+        </div>
+      </div>
+    </dialog>
+
     <dialog class="winner-dialog" id="winner-dialog">
       <div class="winner-screen">
         <p class="winner-kicker">Bioengineering Pursuit champions</p>
@@ -145,8 +158,8 @@
 
     <dialog class="confirm-dialog" id="finish-dialog">
       <form method="dialog">
-        <h2>End the class game?</h2>
-        <p>The class winner is ranked by wedges, then correct answers. Exact ties share a place.</p>
+        <h2 id="finish-dialog-title">End the class game?</h2>
+        <p id="finish-dialog-description">The class winner is ranked by wedges, then correct answers. Exact ties share a place.</p>
         <div class="confirm-actions">
           <button class="button button-secondary" value="cancel">Keep playing</button>
           <button class="button button-success" id="confirm-finish" value="confirm">Show results</button>
