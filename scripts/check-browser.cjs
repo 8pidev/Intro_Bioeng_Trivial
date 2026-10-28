@@ -14,6 +14,13 @@ const { chromium } = require("playwright");
     await page.goto(pathToFileURL(path.resolve(__dirname, "../index.html")).href);
     await page.evaluate(() => { resetGame(); });
     assert.deepEqual(await page.locator(".team-name").evaluateAll(nodes => nodes.map(n => n.value)), ["Alpha", "Beta", "Gamma", "Delta", "Epsilon", "Zeta"]);
+    assert.equal(await page.locator(".board .token").count(), 1);
+    assert.equal(await page.locator(".board .token").getAttribute("title"), "Alpha");
+    assert.equal(await page.evaluate(() => {
+      const star = document.querySelector(".board .token").getBoundingClientRect();
+      const label = document.querySelector(".board-center-label").getBoundingClientRect();
+      return star.top >= label.bottom;
+    }), true, "The active hub star must remain visible below the center label");
     // The first six rolled by Alpha from the hub must not expose ring neighbors.
     for (const reload of [false, true]) {
       if (reload) await page.reload();
@@ -57,10 +64,15 @@ const { chromium } = require("playwright");
     await page.locator("#category-choice").getByRole("button", { name: "Light Meets Biology", exact: true }).click();
     assert.equal(await page.locator("#category-choice").isVisible(), false);
     assert.equal(await page.locator(".answer-choice").count(), 4);
-    assert.equal(await page.locator("#question-timer").textContent(), "00:30");
+    assert.deepEqual(await page.locator("#question-dialog").evaluate(dialog => {
+      const rect = dialog.getBoundingClientRect();
+      return [rect.width, rect.height];
+    }), [1280, 720]);
+    assert.ok(await page.locator(".answer-choice").first().evaluate(choice => parseFloat(getComputedStyle(choice).fontSize)) >= 24);
+    assert.match(await page.locator("#question-timer").textContent(), /^00:(29|30)$/);
     await page.locator("#question-seconds").fill("45");
     await page.locator("#question-seconds").dispatchEvent("change");
-    assert.equal(await page.locator("#question-timer").textContent(), "00:45");
+    assert.match(await page.locator("#question-timer").textContent(), /^00:(44|45)$/);
     await page.locator("#question-seconds").fill("30");
     await page.locator("#question-seconds").dispatchEvent("change");
     const firstQuestion = await page.locator("#question-text").textContent();
@@ -72,6 +84,8 @@ const { chromium } = require("playwright");
     await page.locator("#continue-answer").click();
     assert.equal(await page.evaluate(() => state.activeTeam), 1);
     assert.deepEqual(await page.evaluate(() => state.teams[0].wedges), ["biooptics"]);
+    assert.equal(await page.locator(".board .token").count(), 1);
+    assert.equal(await page.locator(".board .token").getAttribute("title"), "Beta");
 
     // Every question is spent on display; exhaustion never recycles one.
     assert.deepEqual(await page.evaluate(() => {
@@ -195,7 +209,7 @@ const { chromium } = require("playwright");
     assert.equal(await page.locator("#question-timer-status").isVisible(), true);
     assert.equal(await page.locator(".answer-choice:disabled").count(), 4);
     await page.locator("#retry-question").click();
-    assert.equal(await page.locator("#question-timer").textContent(), "00:30");
+    assert.match(await page.locator("#question-timer").textContent(), /^00:(29|30)$/);
     assert.equal(await page.locator(".answer-choice:disabled").count(), 0);
     await page.locator(".answer-choice").nth(await page.evaluate(() => currentQuestion.correctOption)).click();
     await page.locator("#continue-answer").click();

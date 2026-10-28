@@ -262,19 +262,15 @@ function render() {
     element.classList.toggle("manual-target", manualMove);
     const tokenLayer = element.querySelector(".tokens");
     tokenLayer.replaceChildren();
-    const occupants = state.teams.map((entry, index) => ({ entry, index })).filter(item => item.entry.position === id);
-    occupants.forEach(({ entry, index }, occupantIndex) => {
+    if (team.position === id) {
       const token = document.createElement("span");
-      const angle = occupants.length === 1 ? 0 : occupantIndex * 360 / occupants.length;
-      const radius = occupants.length === 1 ? 0 : 28;
       token.className = "token";
-      token.style.setProperty("--team-color", entry.color);
-      token.style.setProperty("--spin-delay", `${-index * 0.7}s`);
-      token.style.left = `${50 + radius * Math.cos(angle * Math.PI / 180)}%`;
-      token.style.top = `${50 + radius * Math.sin(angle * Math.PI / 180)}%`;
-      token.title = entry.name;
+      token.style.setProperty("--team-color", team.color);
+      token.style.left = "50%";
+      token.style.top = id === "hub" ? "80%" : "50%";
+      token.title = team.name;
       tokenLayer.append(token);
-    });
+    }
   });
 
   renderTeams();

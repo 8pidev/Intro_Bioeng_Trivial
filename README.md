@@ -6,6 +6,9 @@ Chrome or Edge: no server, account, internet connection, or installation needed.
 ## Course and teams
 
 Teams start as Alpha, Beta, Gamma, Delta, Epsilon, and Zeta. Names remain editable.
+Only the active team's star is shown on the board; the other teams keep their
+saved positions until their turns. Questions fill the browser window, with
+larger answer choices for projection. Use Full screen to hide browser chrome.
 The six categories are:
 
 | ID | Board category |
